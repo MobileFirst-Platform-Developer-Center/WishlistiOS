@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D8ECA4BA-7051-48AE-8CF8-EFAF7BC44DF2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ParkStore</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5CBFC8A86A5F1B9C491E345CB37F2771E55FB688</key>
+		<string>https://hub.jazz.net/git/osowski/mobilefirst-wishlist-ios</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ParkStore/ParkStore.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5CBFC8A86A5F1B9C491E345CB37F2771E55FB688</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://hub.jazz.net/git/osowski/mobilefirst-wishlist-ios</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5CBFC8A86A5F1B9C491E345CB37F2771E55FB688</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5CBFC8A86A5F1B9C491E345CB37F2771E55FB688</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ParkStore</string>
+		</dict>
+	</array>
+</dict>
+</plist>

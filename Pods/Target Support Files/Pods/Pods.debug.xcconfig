@@ -1,0 +1,7 @@
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/CloudantToolkitLocal/frameworks" "$(PODS_ROOT)/IMFDataLocal/frameworks"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CDTDatastore" "${PODS_ROOT}/Headers/Public/CloudantQueryObjc" "${PODS_ROOT}/Headers/Public/CloudantToolkitLocal" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/FMDB" "${PODS_ROOT}/Headers/Public/IMFDataLocal"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CDTDatastore" -isystem "${PODS_ROOT}/Headers/Public/CloudantQueryObjc" -isystem "${PODS_ROOT}/Headers/Public/CloudantToolkitLocal" -isystem "${PODS_ROOT}/Headers/Public/CocoaLumberjack" -isystem "${PODS_ROOT}/Headers/Public/FMDB" -isystem "${PODS_ROOT}/Headers/Public/IMFDataLocal"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-CDTDatastore" -l"Pods-CloudantQueryObjc" -l"Pods-CocoaLumberjack" -l"Pods-FMDB" -l"sqlite3" -l"z" -framework "CloudantToolkit" -framework "IMFData" -framework "SystemConfiguration"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods

@@ -1,0 +1,42 @@
+PODS:
+  - CDTDatastore (0.14.0):
+    - CDTDatastore/no-arc (= 0.14.0)
+    - CocoaLumberjack (= 2.0.0-rc)
+    - FMDB (= 2.3)
+  - CDTDatastore/no-arc (0.14.0):
+    - CocoaLumberjack (= 2.0.0-rc)
+    - FMDB (= 2.3)
+  - CloudantQueryObjc (1.0.2):
+    - CDTDatastore (>= 0.13)
+    - CocoaLumberjack (= 2.0.0-rc)
+  - CloudantToolkitLocal (1.0.1):
+    - CDTDatastore (~> 0.14.0)
+    - CloudantQueryObjc (~> 1.0.2)
+  - CocoaLumberjack (2.0.0-rc):
+    - CocoaLumberjack/Default (= 2.0.0-rc)
+    - CocoaLumberjack/Extensions (= 2.0.0-rc)
+  - CocoaLumberjack/Core (2.0.0-rc)
+  - CocoaLumberjack/Default (2.0.0-rc):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.0-rc):
+    - CocoaLumberjack/Default
+  - FMDB (2.3):
+    - FMDB/standard (= 2.3)
+  - FMDB/common (2.3)
+  - FMDB/standard (2.3):
+    - FMDB/common
+  - IMFDataLocal (1.0.0):
+    - CloudantToolkitLocal (~> 1.0.0)
+
+DEPENDENCIES:
+  - IMFDataLocal (= 1.0.0)
+
+SPEC CHECKSUMS:
+  CDTDatastore: ed983dbcdaf8cb4a97b039fc8f5f06cf74492c4b
+  CloudantQueryObjc: 70612b926eb730aa35713ceb119bb34fa4b15d65
+  CloudantToolkitLocal: 7696c3cae89658562f09ab73a5b83db0de808fe4
+  CocoaLumberjack: 04c5b9b7479dd4276a09700fcd6644423ea1751c
+  FMDB: 773d79bb74226959b7e2286b1d6e0bd857c88915
+  IMFDataLocal: 7aed6f2d3bf6cf59f5dfdd8f0997402daad3d9f9
+
+COCOAPODS: 0.36.4

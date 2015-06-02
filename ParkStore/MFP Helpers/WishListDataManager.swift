@@ -31,7 +31,13 @@ class WishListDataManager: NSObject {
         let host = configuration?["host"] as! String
         let port = configuration?["port"] as! String
         
-        var manager:IMFDataManager = IMFDataManager.initializeWithUrl("\(protocolString)://\(host):\(port)/\(cloudantProxyPath)")
+        var manager:IMFDataManager
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey("isCustomServerURL") {
+            manager = IMFDataManager.initializeWithUrl(NSUserDefaults.standardUserDefaults().objectForKey("DataProxyCustomServerURL") as! String)
+        }else{
+            manager = IMFDataManager.initializeWithUrl("\(protocolString)://\(host):\(port)/\(cloudantProxyPath)")
+        }
         
         manager.remoteStore(self.remoteStoreName, completionHandler: { (createdStore:CDTStore!, err:NSError!) -> Void in
             if nil != err{

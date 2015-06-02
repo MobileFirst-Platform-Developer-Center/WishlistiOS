@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YdW-lg-4wc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YdW-lg-4wc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -677,8 +677,24 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9mU-zb-Ge6" id="HGy-sb-agA">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-jw-Bud">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXF-c9-4xd">
+                                                    <rect key="frame" x="64" y="4" width="87" height="36"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.97035700079999998" green="0.97001069780000004" blue="0.98018431660000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="QUB-rS-4ca" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="xLb-vS-2AT"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logout" id="rxh-3h-qHT">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -995,6 +1011,81 @@
             </objects>
             <point key="canvasLocation" x="356.5" y="3512.5"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="9ly-jW-IeS">
+            <objects>
+                <viewController id="c72-wD-FyF" userLabel="Settings" customClass="SettingsViewController" customModule="ParkStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aeW-gx-9kK"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Vb-hM-fUi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CbB-NH-Txg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NkK-up-Av4">
+                                <rect key="frame" x="299" y="52" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Custom Server" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D99-T7-OQL">
+                                <rect key="frame" x="22" y="57" width="240" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="custom server url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PW6-tR-3Nc">
+                                <rect key="frame" x="22" y="143" width="326" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="custom dataproxy url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4s-cR-wtZ">
+                                <rect key="frame" x="22" y="219" width="326" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="BCI-WJ-VtA">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="p1w-b3-bkF"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="KEr-53-q8Q">
+                            <connections>
+                                <action selector="saveSettings:" destination="c72-wD-FyF" id="MsL-qY-Kul"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="customDataProxyUrl" destination="y4s-cR-wtZ" id="zKB-2B-WHZ"/>
+                        <outlet property="customServerSwitch" destination="NkK-up-Av4" id="j4q-Fz-C5d"/>
+                        <outlet property="customServerUrl" destination="PW6-tR-3Nc" id="ZAX-dY-rZ3"/>
+                        <outlet property="sideBarButton" destination="p1w-b3-bkF" id="mZh-KP-41E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IhX-Yh-4Vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872.5" y="4282.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tt1-Xm-STA">
+            <objects>
+                <navigationController id="QUB-rS-4ca" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iJM-yu-7ib">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.52156862749999999" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0039215686269999999" green="0.16862745100000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="c72-wD-FyF" kind="relationship" relationship="rootViewController" id="lEn-Se-dbE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZi-tH-aCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356.5" y="4282.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" width="185" height="127"/>
@@ -1004,7 +1095,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Bp4-df-tBY"/>
         <segue reference="k1B-rV-w2y"/>
-        <segue reference="e9m-Aw-Bva"/>
+        <segue reference="oEV-jF-lDp"/>
         <segue reference="hcf-do-q4J"/>
     </inferredMetricsTieBreakers>
 </document>

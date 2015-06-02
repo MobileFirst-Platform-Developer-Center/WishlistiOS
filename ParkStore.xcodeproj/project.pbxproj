@@ -26,6 +26,8 @@
 		481994E01AE6D04400FD26E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481994DE1AE6D04400FD26E2 /* Main.storyboard */; };
 		481994E51AE6D04400FD26E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 481994E31AE6D04400FD26E2 /* LaunchScreen.xib */; };
 		481994F11AE6D04400FD26E2 /* ParkStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481994F01AE6D04400FD26E2 /* ParkStoreTests.swift */; };
+		4836BB111B1C2C25008D4A85 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4836BB101B1C2C25008D4A85 /* SettingsViewController.swift */; };
+		4836BB131B1C366F008D4A85 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4836BB121B1C366F008D4A85 /* Utils.swift */; };
 		483CF9F11AE77A4700139BFF /* ParkStoreChallengeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483CF9F01AE77A4700139BFF /* ParkStoreChallengeHandler.swift */; };
 		483CF9F61AE77D2800139BFF /* worklight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 483CF9F41AE77D2800139BFF /* worklight.plist */; };
 		483CFA531AE77D4E00139BFF /* sqlcipher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483CF9F91AE77D4E00139BFF /* sqlcipher.framework */; };
@@ -79,6 +81,8 @@
 		481994EA1AE6D04400FD26E2 /* ParkStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		481994EF1AE6D04400FD26E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		481994F01AE6D04400FD26E2 /* ParkStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkStoreTests.swift; sourceTree = "<group>"; };
+		4836BB101B1C2C25008D4A85 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4836BB121B1C366F008D4A85 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		483CF9F01AE77A4700139BFF /* ParkStoreChallengeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkStoreChallengeHandler.swift; sourceTree = "<group>"; };
 		483CF9F21AE77C5600139BFF /* Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		483CF9F41AE77D2800139BFF /* worklight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = worklight.plist; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				056779B51AEA92170061FE3B /* AddItemViewController.swift */,
+				4836BB101B1C2C25008D4A85 /* SettingsViewController.swift */,
 				056779B61AEA92170061FE3B /* CatalogTableViewController.swift */,
 				056779B71AEA92170061FE3B /* LandingViewController.swift */,
 				056779B81AEA92170061FE3B /* LogInViewController.swift */,
@@ -264,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				056779B31AEA92170061FE3B /* CatalogDataManager.swift */,
+				4836BB121B1C366F008D4A85 /* Utils.swift */,
 				056779E51AEAD5720061FE3B /* WishListDataManager.swift */,
 				483CF9F01AE77A4700139BFF /* ParkStoreChallengeHandler.swift */,
 			);
@@ -641,6 +647,8 @@
 				056779D01AEA92170061FE3B /* ServerPathViewController.swift in Sources */,
 				056779CA1AEA92170061FE3B /* CatalogDataManager.swift in Sources */,
 				056779E61AEAD5720061FE3B /* WishListDataManager.swift in Sources */,
+				4836BB131B1C366F008D4A85 /* Utils.swift in Sources */,
+				4836BB111B1C2C25008D4A85 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,5 +20,7 @@
 	<string>wY/mbnwKTDDYQUvuQCdSgg==</string>
 	<key>platformVersion</key>
 	<string>7.0.0.00.20150130-1759</string>
+	<key>dataproxy</key>
+	<string>imfdata</string>
 </dict>
 </plist>

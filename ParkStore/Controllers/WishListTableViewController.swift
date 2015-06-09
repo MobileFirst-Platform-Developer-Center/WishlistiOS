@@ -19,8 +19,15 @@ class WishListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
-            if success {
+//        WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
+//            if success {
+//                self.items = items
+//                self.tableView.reloadData()
+//            }
+//        }
+        
+        LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+            if success{
                 self.items = items
                 self.tableView.reloadData()
             }
@@ -39,8 +46,14 @@ class WishListTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
-            if success {
+//        WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
+//            if success {
+//                self.items = items
+//                self.tableView.reloadData()
+//            }
+//        }
+        LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+            if success{
                 self.items = items
                 self.tableView.reloadData()
             }

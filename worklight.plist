@@ -5,13 +5,13 @@
 	<key>protocol</key>
 	<string>http</string>
 	<key>host</key>
-	<string>129.41.233.140</string>
+	<string>129.41.228.136</string>
 	<key>port</key>
 	<string>9080</string>
 	<key>wlServerContext</key>
-	<string>/wishlist/</string>
+	<string>/MobileFirstStarter/</string>
 	<key>application id</key>
-	<string>ioswishlist</string>
+	<string>IOSWishList</string>
 	<key>application version</key>
 	<string>1.0</string>
 	<key>environment</key>

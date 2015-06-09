@@ -21,10 +21,8 @@ class CatalogDataManager: NSObject{
     
     
     func getCatalogData(callback: ((Bool, [Item]!)->())){
-//        let adapterName : String = "CatalogAdapter"
-//        let procedureName : String = "getCatalog"
-        let adapterName : String = "Product"
-        let procedureName : String = ""
+        let adapterName : String = "CatalogAdapter"
+        let procedureName : String = "getCatalog"
         
         let url :NSURL = NSURL(string: "adapters/\(adapterName)/\(procedureName)")!
         
@@ -36,9 +34,9 @@ class CatalogDataManager: NSObject{
                 callback(false, nil)
             }else{
                 
-                var responseText = wlresponse.responseText
-//                var responseJSON : NSDictionary = wlresponse.responseJSON as NSDictionary
-//                var responseText:NSString = responseJSON.objectForKey("Envelope")?.objectForKey("Body")?.objectForKey("getAllProductsDetailsReturn") as! NSString
+//                var responseText = wlresponse.responseText
+                var responseJSON : NSDictionary = wlresponse.responseJSON as NSDictionary
+                var responseText:NSString = responseJSON.objectForKey("Envelope")?.objectForKey("Body")?.objectForKey("getAllProductsDetailsReturn") as! NSString
                 
                 var jsonData:NSData = responseText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
                 

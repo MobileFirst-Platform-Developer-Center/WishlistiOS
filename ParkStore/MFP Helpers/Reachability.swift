@@ -33,10 +33,18 @@ public class Reachability {
     }
     
     class func isConnectedToCloudantDataProxy(callback:(Bool)->())  {
-        let url = NSURL(string: "http://google.com") as NSURL!
+        let configurationPath = NSBundle.mainBundle().pathForResource("worklight", ofType: "plist")
+        let configuration = NSDictionary(contentsOfFile: configurationPath!)
+        let protocolString = configuration?["protocol"] as! String
+        let host = configuration?["host"] as! String
+        let port = configuration?["port"] as! String
+        let proxy = configuration?["dataproxy"] as! String
+        
+        let url = NSURL(string: "\(protocolString)://\(host):\(port)/\(proxy)") as NSURL!
         var request:NSURLRequest = NSURLRequest(URL: url)
         let queue:NSOperationQueue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            
             if error != nil{
                 callback(false)
             }else{

@@ -14,25 +14,35 @@ class WishListTableViewController: UITableViewController {
     var items : [Item] = []
     var selectedItem : Item!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
-//            if success {
-//                self.items = items
-//                self.tableView.reloadData()
-//            }
-//        }
-        
-        LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
-            if success{
-                self.items = items
-                self.tableView.reloadData()
+        if Reachability.isConnectedToNetwork(){
+            Reachability.isConnectedToCloudantDataProxy { (response) -> () in
+                if response{
+                    WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
+                        if success {
+                            self.items = items
+                            self.tableView.reloadData()
+                        }
+                    }
+                }else{
+                    LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+                        if success{
+                            self.items = items
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
+        }else{
+            LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+                if success{
+                    self.items = items
+                    self.tableView.reloadData()
+                }
             }
         }
-        
+     
         let revealViewController = self.revealViewController()
         if revealViewController != nil {
             self.sideBarButton.target = revealViewController
@@ -46,16 +56,30 @@ class WishListTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-//        WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
-//            if success {
-//                self.items = items
-//                self.tableView.reloadData()
-//            }
-//        }
-        LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
-            if success{
-                self.items = items
-                self.tableView.reloadData()
+        if Reachability.isConnectedToNetwork(){
+            Reachability.isConnectedToCloudantDataProxy { (response) -> () in
+                if response{
+                    WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
+                        if success {
+                            self.items = items
+                            self.tableView.reloadData()
+                        }
+                    }
+                }else{
+                    LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+                        if success{
+                            self.items = items
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }
+        }else{
+            LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+                if success{
+                    self.items = items
+                    self.tableView.reloadData()
+                }
             }
         }
     }

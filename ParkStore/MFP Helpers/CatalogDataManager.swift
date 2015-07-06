@@ -53,7 +53,7 @@ class CatalogDataManager: NSObject{
                     let priceString = itemDict.objectForKey("price") as! NSString
                     item.price = priceString.floatValue
                     let imagePath = itemDict.objectForKey("photo") as! String
-                    item.imgURL = "http://boxstore-catalog.mybluemix.net/MFPSampleWebService/\(imagePath)"
+                    item.imgURL = "https://dl.dropboxusercontent.com/u/97674776/\(imagePath)"
                     
                     item.productId = itemDict.objectForKey("productID") as! String
                     items.append(item)

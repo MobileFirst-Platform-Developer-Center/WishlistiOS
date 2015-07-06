@@ -44,7 +44,7 @@ class WishListDataManager: NSObject {
             if nil != err{
                 //error
                 println("Error in creating remote store :  \(err.debugDescription)")
-                var error:UIAlertView = UIAlertView(title: "BoxStore", message: "There was an error while retrieving the wish list", delegate: nil, cancelButtonTitle: "OK")
+                var error:UIAlertView = UIAlertView(title: "Wishlist", message: "There was an error while retrieving the wish list", delegate: nil, cancelButtonTitle: "OK")
                 error.show()
             }else{
                 self.dataStore = createdStore

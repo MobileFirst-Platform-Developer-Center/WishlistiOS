@@ -34,7 +34,7 @@ class AddItemViewController: UIViewController {
         item.title = titleTextField.text
         item.store = storeTextField.text
         item.price = (priceTextField.text as NSString).floatValue
-        item.imgURL = "http://boxstore-catalog.mybluemix.net/MFPSampleWebService/images/gs6edge.png"
+        item.imgURL = "https://dl.dropboxusercontent.com/u/97674776/images/gs6edge.png"
         
         saveToDB(item)
     }

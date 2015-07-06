@@ -21,7 +21,7 @@ class CatalogTableViewController: UITableViewController {
                 self.items = items
                 self.tableView.reloadData()
             }else{
-                var error:UIAlertView = UIAlertView(title: "BoxStore", message: "There was an error while retrieving the catalog", delegate: nil, cancelButtonTitle: "OK")
+                var error:UIAlertView = UIAlertView(title: "WishList", message: "There was an error while retrieving the catalog", delegate: nil, cancelButtonTitle: "OK")
                 error.show()
             }
         }

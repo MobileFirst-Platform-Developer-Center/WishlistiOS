@@ -42,7 +42,6 @@
 		483CFA5F1AE77D9900139BFF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483CFA5E1AE77D9900139BFF /* CoreData.framework */; };
 		483CFA611AE77D9F00139BFF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483CFA601AE77D9F00139BFF /* MobileCoreServices.framework */; };
 		483CFA631AE77DA600139BFF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483CFA621AE77DA600139BFF /* SystemConfiguration.framework */; };
-		48A00A121AE968E4003B8589 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A00A111AE968E4003B8589 /* Reachability.m */; };
 		53920F47ECC61322F2E91A40 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E2AF0311E727CC35616DA5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -185,8 +184,6 @@
 		483CFA5E1AE77D9900139BFF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		483CFA601AE77D9F00139BFF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		483CFA621AE77DA600139BFF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		48A00A101AE968E4003B8589 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		48A00A111AE968E4003B8589 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		B2E2AF0311E727CC35616DA5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -238,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				056779DC1AEA9CC80061FE3B /* Alamofire.swift */,
-				48A00A131AE968EC003B8589 /* Reachability */,
 				056779BE1AEA92170061FE3B /* SWRevealViewController */,
 			);
 			path = External;
@@ -466,15 +462,6 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
-		48A00A131AE968EC003B8589 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				48A00A101AE968E4003B8589 /* Reachability.h */,
-				48A00A111AE968E4003B8589 /* Reachability.m */,
-			);
-			path = Reachability;
-			sourceTree = "<group>";
-		};
 		51CBD6364D01DD89C8CF9ED3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +532,7 @@
 		481994CD1AE6D04400FD26E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = IBM;
 				TargetAttributes = {
@@ -646,7 +634,6 @@
 				056779CE1AEA92170061FE3B /* LogInViewController.swift in Sources */,
 				056779CF1AEA92170061FE3B /* MenuTableViewController.swift in Sources */,
 				056779D21AEA92170061FE3B /* WishListTableViewController.swift in Sources */,
-				48A00A121AE968E4003B8589 /* Reachability.m in Sources */,
 				056779D11AEA92170061FE3B /* ViewItemViewController.swift in Sources */,
 				483CF9F11AE77A4700139BFF /* ParkStoreChallengeHandler.swift in Sources */,
 				4836BB151B1E210B008D4A85 /* LocalDataManager.swift in Sources */,

@@ -12,15 +12,15 @@ class LocalDataManager:NSObject{
     var localStore:CDTStore?
     var itemsFromAdapter:[Item] = []
     var itemsFromLocalStore:[Item] = []
-    
+// 
     class var sharedInstance : LocalDataManager{
-        
+
         struct Singleton {
             static let instance = LocalDataManager()
         }
         return Singleton.instance
     }
-    
+
     func setUpLocalDB(){
         var manager:IMFDataManager
         manager = IMFDataManager.initializeWithUrl("http:localhost:9080/data")
@@ -30,21 +30,21 @@ class LocalDataManager:NSObject{
             //Error
         }else{
             self.localStore?.mapper.setDataType("Item", forClassName: NSStringFromClass(Item.classForCoder()))
-            
+
 //            localStore?.createIndexWithDataType("Item", fields: <#[AnyObject]!#>, completionHandler: { (err:NSError!) -> Void in
 //            })
 //            getAllLocalItems()
         }
-        
-        
+
+
     }
-    
+
     func getAllLocalItems(callback:(Bool, [Item]!)->()){
         if self.localStore == nil {
             self.setUpLocalDB()
         }else{
             let query: CDTQuery = CDTCloudantQuery(dataType: "Item")
-            
+
             self.localStore!.performQuery(query, completionHandler: { (results, error) -> Void in
                 if nil != error {
                     // Handle error
@@ -55,7 +55,7 @@ class LocalDataManager:NSObject{
                     for item in results as![Item]{
                         self.itemsFromLocalStore.append(item)
                     }
-                    
+
                     for item in self.itemsFromLocalStore{
                         println("Item : :  \(item.title)")
                     }
@@ -65,16 +65,16 @@ class LocalDataManager:NSObject{
             })
         }
     }
-    
+
     func getAllItemsFromAdapter(callback:(Bool, [Item]!)->()){
         if self.localStore == nil{
             self.setUpLocalDB()
         }
         let adapterName : String = "LocalStoreAdapter"
         let procedureName : String = "localstore/getAllItems"
-        
+
         let url :NSURL = NSURL(string: "adapters/\(adapterName)/\(procedureName)")!
-        
+
         var resourceRequest : WLResourceRequest = WLResourceRequest()
         resourceRequest = WLResourceRequest(URL: url, method: "GET")
         resourceRequest.sendWithCompletionHandler { (wlResponse:WLResponse!, err: NSError!) -> Void in
@@ -85,7 +85,7 @@ class LocalDataManager:NSObject{
                 println("Raw data from adapter \(responseJSONString.description)")
                 var data: NSData = responseJSONString.dataUsingEncoding(NSUTF8StringEncoding)!
                 var error: NSError?
-                
+
                 // convert NSData to 'AnyObject'
                 let JSONObj = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0),
                     error: &error) as! NSArray
@@ -110,7 +110,7 @@ class LocalDataManager:NSObject{
             }
         }
     }
-    
+
     func syncLocalStoreWithAdapter(callback:(Bool, [Item]!)->()){
         if self.localStore == nil {
             self.setUpLocalDB()
@@ -133,7 +133,7 @@ class LocalDataManager:NSObject{
             }
         }
     }
-    
+
     func addItemsFromAdapterToLocalStore(callback:(Bool, [Item]!)->()){
         for (var i=0; i<self.itemsFromAdapter.count; i++) {
             self.localStore?.mapper.setDataType("Item", forClassName: NSStringFromClass(Item.classForCoder()))
@@ -149,7 +149,7 @@ class LocalDataManager:NSObject{
             })
         }
     }
-    
+
     func saveItemToLocalList(item: Item, callback:()->()){
         self.localStore?.mapper.setDataType("Item", forClassName: NSStringFromClass(Item.classForCoder()))
         self.localStore?.save(item, completionHandler: { (obj:AnyObject!, err:NSError!) -> Void in

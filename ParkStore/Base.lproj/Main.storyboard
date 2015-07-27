@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A216g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YdW-lg-4wc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -399,10 +400,15 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lR-2p-nLx">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lR-2p-nLx">
                                 <rect key="frame" x="0.0" y="290" width="375" height="313"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.80784313725490198" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="313" id="CXI-Kz-zeI"/>
+                                    <constraint firstAttribute="width" secondItem="9lR-2p-nLx" secondAttribute="height" multiplier="375:313" id="ptG-R1-KXU"/>
+                                    <constraint firstAttribute="width" constant="375" id="ui0-Hd-0En"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                 <state key="normal" title="Wish List">
                                     <color key="titleColor" red="0.18823529410000001" green="0.37254901959999998" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -412,9 +418,14 @@
                                     <segue destination="hcW-hK-FHG" kind="show" id="5AF-UC-AKU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-dx-jfW">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-dx-jfW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VAe-dx-jfW" secondAttribute="height" multiplier="375:287" id="1zq-MF-tMP"/>
+                                    <constraint firstAttribute="width" constant="375" id="DVg-eH-EYF"/>
+                                    <constraint firstAttribute="height" constant="287" id="oAi-J0-Pyq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                 <state key="normal" title="Catalog">
                                     <color key="titleColor" red="0.18823529410000001" green="0.37254901959999998" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -431,6 +442,7 @@
                             <constraint firstItem="VAe-dx-jfW" firstAttribute="centerY" secondItem="9lR-2p-nLx" secondAttribute="centerY" id="SSo-Ov-hqz"/>
                             <constraint firstAttribute="centerX" secondItem="VAe-dx-jfW" secondAttribute="centerX" id="W4d-mU-w5c"/>
                             <constraint firstAttribute="centerX" secondItem="9lR-2p-nLx" secondAttribute="centerX" id="u0z-pp-ppa"/>
+                            <constraint firstItem="9lR-2p-nLx" firstAttribute="top" secondItem="VAe-dx-jfW" secondAttribute="bottom" constant="3" id="vHI-6x-o1o"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1205,8 +1217,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="k1B-rV-w2y"/>
-        <segue reference="Bp4-df-tBY"/>
-        <segue reference="hcf-do-q4J"/>
         <segue reference="e9m-Aw-Bva"/>
+        <segue reference="5AF-UC-AKU"/>
+        <segue reference="hcf-do-q4J"/>
     </inferredMetricsTieBreakers>
 </document>

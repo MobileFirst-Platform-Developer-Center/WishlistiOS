@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         WLClient.sharedInstance().registerChallengeHandler(ParkStoreChallengeHandler())
-        if NSUserDefaults.standardUserDefaults().boolForKey("isCustomServerURL") {
-            WLClient.sharedInstance().setServerUrl(NSURL(string: NSUserDefaults.standardUserDefaults().objectForKey("MFPCustomServerURL") as! String))
-        }else{
-            WLClient.sharedInstance().setServerUrl(NSURL(string: Utils.getMfpServerUrl() as String))
+        var customServerUrl = NSUserDefaults.standardUserDefaults().objectForKey("MFPCustomServerURL") as? String
+        
+        if customServerUrl != nil{
+            WLClient.sharedInstance().setServerUrl(NSURL(string: customServerUrl!))
         }
         return true
     }

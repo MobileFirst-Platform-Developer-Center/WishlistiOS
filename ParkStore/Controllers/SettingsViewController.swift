@@ -12,12 +12,14 @@ import UIKit
 class SettingsViewController : UIViewController{
     
     @IBOutlet weak var sideBarButton: UIBarButtonItem!
-    @IBOutlet weak var customDataProxyUrl: UITextField!
-    @IBOutlet weak var customServerUrl: UITextField!
-    @IBOutlet weak var customServerSwitch: UISwitch!
+    @IBOutlet weak var mfpRuntimeName: UITextField!
+    @IBOutlet weak var customServerHostPort: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customServerHostPort.text = NSUserDefaults.standardUserDefaults().objectForKey("MFPCustomServerHostPort") as? String
+        mfpRuntimeName.text = NSUserDefaults.standardUserDefaults().objectForKey("MFPCustomServerRuntime") as? String
         let revealViewController = self.revealViewController()
         if revealViewController != nil {
             self.sideBarButton.target = revealViewController
@@ -27,16 +29,14 @@ class SettingsViewController : UIViewController{
     }
     
     @IBAction func saveSettings(sender: AnyObject) {
-        if customServerSwitch.on{
-            //on
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isCustomServerURL")
-            WLClient.sharedInstance().setServerUrl(NSURL(string: customServerUrl.text))
-            NSUserDefaults.standardUserDefaults().setURL(NSURL(string: customServerUrl.text)!, forKey: "MFPCustomServerURL")
-            NSUserDefaults.standardUserDefaults().setObject( customDataProxyUrl.text, forKey: "DataProxyCustomServerURL")
-        }else{
-            //off
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isCustomServerURL")
-            WLClient.sharedInstance().setServerUrl(NSURL(fileURLWithPath: Utils.getMfpServerUrl() as String))
-        }
+        var customServerUrl: String = "\(customServerHostPort.text)/\(mfpRuntimeName.text)"
+        var dataproxyUrl: String = "\(customServerHostPort.text)/datastore"
+            WLClient.sharedInstance().setServerUrl(NSURL(string: customServerUrl))
+            NSUserDefaults.standardUserDefaults().setObject(customServerUrl, forKey: "MFPCustomServerURL")
+            NSUserDefaults.standardUserDefaults().setObject( dataproxyUrl, forKey: "DataProxyCustomServerURL")
+        
+        NSUserDefaults.standardUserDefaults().setValue(customServerHostPort.text, forKey: "MFPCustomServerHostPort")
+        NSUserDefaults.standardUserDefaults().setValue(mfpRuntimeName.text, forKey: "MFPCustomServerRuntime")
+        
     }
 }

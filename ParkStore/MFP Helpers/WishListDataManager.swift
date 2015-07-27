@@ -12,8 +12,7 @@ class WishListDataManager: NSObject {
     
     var dataStore:CDTStore!
     var appDelegate:AppDelegate!
-    let cloudantProxyPath:String = "imfdata"
-//        let cloudantProxyPath:String = "datastore"
+    let cloudantProxyPath:String = "datastore"
     let remoteStoreName:String = "wishlist17"
     
     class var sharedInstance : WishListDataManager{
@@ -25,20 +24,7 @@ class WishListDataManager: NSObject {
     }
     
     func setUpDB(callback:(Bool, [Item]!)->()){
-        let configurationPath = NSBundle.mainBundle().pathForResource("worklight", ofType: "plist")
-        let configuration = NSDictionary(contentsOfFile: configurationPath!)
-        let protocolString = configuration?["protocol"] as! String
-        let host = configuration?["host"] as! String
-        let port = configuration?["port"] as! String
-        
-        var manager:IMFDataManager
-        
-        if NSUserDefaults.standardUserDefaults().boolForKey("isCustomServerURL") {
-            manager = IMFDataManager.initializeWithUrl(NSUserDefaults.standardUserDefaults().objectForKey("DataProxyCustomServerURL") as! String)
-        }else{
-//            manager = IMFDataManager.initializeWithUrl("\(protocolString)://\(host):\(port)/\(cloudantProxyPath)")
-             manager = IMFDataManager.initializeWithUrl("http://9.182.149.248:9080/imfdata")
-        }
+        var manager:IMFDataManager = IMFDataManager.initializeWithUrl(NSUserDefaults.standardUserDefaults().objectForKey("DataProxyCustomServerURL") as! String)
         
         manager.remoteStore(self.remoteStoreName, completionHandler: { (createdStore:CDTStore!, err:NSError!) -> Void in
             if nil != err{

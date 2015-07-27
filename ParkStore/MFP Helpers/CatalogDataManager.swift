@@ -33,18 +33,17 @@ class CatalogDataManager: NSObject{
                 
                 callback(false, nil)
             }else{
+                var responseJSON = wlresponse.responseJSON as NSDictionary
+                var responseText = responseJSON.objectForKey("getAllProductsDetailsReturn") as! NSArray
                 
-//                var responseText = wlresponse.responseText
-                var responseJSON : NSDictionary = wlresponse.responseJSON as NSDictionary
-                var responseText:NSString = responseJSON.objectForKey("Envelope")?.objectForKey("Body")?.objectForKey("getAllProductsDetailsReturn") as! NSString
+//                var jsonData:NSData = responseText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
                 
-                var jsonData:NSData = responseText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
-                
-                var itemsArray:NSArray = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.AllowFragments, error: nil)as! NSArray
+//                var itemsArray:NSArray = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.AllowFragments, error: nil)as! NSArray
                 
                 var items : [Item] = []
                 
-                for item  in itemsArray{
+//                for item  in itemsArray{
+                for item  in responseText{
                     let itemDict:NSDictionary = item as! NSDictionary
                     
                     var item:Item = Item()

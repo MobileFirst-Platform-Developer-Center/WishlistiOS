@@ -27,4 +27,8 @@ import UIKit
         
         return currencyFormatter.stringFromNumber(self.price)!
     }
+    
+    func getString() -> String{
+        return "{'title':'\(self.title)','store':'\(self.store)','price':\(self.price),'image':'\(self.imgURL)','productId':'00006'}"
+    }
 }

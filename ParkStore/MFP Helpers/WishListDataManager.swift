@@ -13,7 +13,7 @@ class WishListDataManager: NSObject {
     var dataStore:CDTStore!
     var appDelegate:AppDelegate!
     let cloudantProxyPath:String = "datastore"
-    let remoteStoreName:String = "wishlist17"
+    let remoteStoreName:String = "wishlist9"
     
     class var sharedInstance : WishListDataManager{
         

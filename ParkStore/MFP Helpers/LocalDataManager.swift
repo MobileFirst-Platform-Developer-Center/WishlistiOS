@@ -161,4 +161,20 @@ class LocalDataManager:NSObject{
             }
         })
     }
+    
+    func saveItemToLocalStoreList(item: Item, callback:(Bool, [Item]!)->()){
+       var resourceReq = WLResourceRequest(URL:  NSURL(string: "adapters/LocalStoreAdapter/localstore/addItem"), method: "PUT" )
+        resourceReq.sendWithBody(item.getString()) { (response:WLResponse!, err:NSError!) -> Void in
+            if err != nil{
+            //err
+                println("An error occured while adding data to the local store adapter")
+            } else{
+                    println("Added an item to the adapter")
+               self.getAllItemsFromAdapter(callback)
+            }
+            
+        }
+        
+    }
+    
 }

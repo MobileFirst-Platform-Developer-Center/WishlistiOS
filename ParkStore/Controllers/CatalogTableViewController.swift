@@ -52,7 +52,41 @@ class CatalogTableViewController: UITableViewController {
             cell.itemImageView.image = image
         })
         
+        cell.addFromCatalogBtn.tag = indexPath.row
+        cell.addFromCatalogBtn.addTarget(self, action: Selector("addButtonClicked:"), forControlEvents: UIControlEvents.TouchUpInside)
+        
         return cell
+    }
+    
+    func addButtonClicked(sender:UIButton){
+        let item = self.items[sender.tag] as Item
+        println("tapped add with data \(item.title) \(item.store) \(item.price) \(item.productId) \(item.imgURL)")
+        Reachability.isConnectedToCloudantDataProxy { (response) -> () in
+            if response{
+                WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
+                    if success {
+                        WishListDataManager.sharedInstance.saveItemToWishList(item, callback: { () -> () in
+                            println("Added data to wishlist from catalog")
+                            UIAlertView(title: "Wishlist", message: "Added Item to Wishlist", delegate: nil, cancelButtonTitle: "OK").show()
+                        })
+                    }
+                }
+            }else{
+                LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+                    if success{
+                        //TODO
+//                        LocalDataManager.sharedInstance.saveItemToWishList(item, callback: { () -> () in
+//                            println("Added data to wishlist from catalog")
+//                            UIAlertView(title: "Wishlist", message: "Added Item to Wishlist", delegate: nil, cancelButtonTitle: "OK").show()
+//                        })
+
+                    }
+                }
+            }
+        }
+
+        
+        
     }
     
     override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {

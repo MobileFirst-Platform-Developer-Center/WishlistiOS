@@ -17,7 +17,6 @@
 		056779D11AEA92170061FE3B /* ViewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056779BB1AEA92170061FE3B /* ViewItemViewController.swift */; };
 		056779D21AEA92170061FE3B /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056779BC1AEA92170061FE3B /* WishListTableViewController.swift */; };
 		056779D31AEA92170061FE3B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 056779C01AEA92170061FE3B /* SWRevealViewController.m */; };
-		056779D41AEA92170061FE3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 056779C11AEA92170061FE3B /* Images.xcassets */; };
 		056779D51AEA92170061FE3B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056779C31AEA92170061FE3B /* Item.swift */; };
 		056779D81AEA92170061FE3B /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056779C91AEA92170061FE3B /* ItemTableViewCell.swift */; };
 		056779DD1AEA9CC80061FE3B /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056779DC1AEA9CC80061FE3B /* Alamofire.swift */; };
@@ -26,6 +25,7 @@
 		481994E01AE6D04400FD26E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481994DE1AE6D04400FD26E2 /* Main.storyboard */; };
 		481994E51AE6D04400FD26E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 481994E31AE6D04400FD26E2 /* LaunchScreen.xib */; };
 		481994F11AE6D04400FD26E2 /* ParkStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481994F01AE6D04400FD26E2 /* ParkStoreTests.swift */; };
+		482DDF981B6A120C00672E3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482DDF971B6A120C00672E3B /* Images.xcassets */; };
 		4836BB111B1C2C25008D4A85 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4836BB101B1C2C25008D4A85 /* SettingsViewController.swift */; };
 		4836BB131B1C366F008D4A85 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4836BB121B1C366F008D4A85 /* Utils.swift */; };
 		4836BB151B1E210B008D4A85 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4836BB141B1E210B008D4A85 /* LocalDataManager.swift */; };
@@ -67,7 +67,6 @@
 		056779BC1AEA92170061FE3B /* WishListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableViewController.swift; sourceTree = "<group>"; };
 		056779BF1AEA92170061FE3B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		056779C01AEA92170061FE3B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		056779C11AEA92170061FE3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		056779C31AEA92170061FE3B /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		056779C91AEA92170061FE3B /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		056779DC1AEA9CC80061FE3B /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		481994EA1AE6D04400FD26E2 /* ParkStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		481994EF1AE6D04400FD26E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		481994F01AE6D04400FD26E2 /* ParkStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkStoreTests.swift; sourceTree = "<group>"; };
+		482DDF971B6A120C00672E3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4836BB101B1C2C25008D4A85 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4836BB121B1C366F008D4A85 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4836BB141B1E210B008D4A85 /* LocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
@@ -281,6 +281,7 @@
 		481994CC1AE6D04400FD26E2 = {
 			isa = PBXGroup;
 			children = (
+				482DDF971B6A120C00672E3B /* Images.xcassets */,
 				912A9BAA1376140C1D3750BE /* Frameworks */,
 				481994D71AE6D04400FD26E2 /* ParkStore */,
 				481994ED1AE6D04400FD26E2 /* ParkStoreTests */,
@@ -306,7 +307,6 @@
 				481994DA1AE6D04400FD26E2 /* AppDelegate.swift */,
 				056779B41AEA92170061FE3B /* Controllers */,
 				056779BD1AEA92170061FE3B /* External */,
-				056779C11AEA92170061FE3B /* Images.xcassets */,
 				481994E31AE6D04400FD26E2 /* LaunchScreen.xib */,
 				481994DE1AE6D04400FD26E2 /* Main.storyboard */,
 				056779E71AEAD57C0061FE3B /* MFP Helpers */,
@@ -570,7 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				483CFA551AE77D4E00139BFF /* Localizations.bundle in Resources */,
-				056779D41AEA92170061FE3B /* Images.xcassets in Resources */,
+				482DDF981B6A120C00672E3B /* Images.xcassets in Resources */,
 				483CF9F61AE77D2800139BFF /* worklight.plist in Resources */,
 				481994E01AE6D04400FD26E2 /* Main.storyboard in Resources */,
 				481994E51AE6D04400FD26E2 /* LaunchScreen.xib in Resources */,

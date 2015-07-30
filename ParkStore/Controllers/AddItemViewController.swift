@@ -35,7 +35,7 @@ class AddItemViewController: UIViewController {
         item.store = storeTextField.text
         item.price = (priceTextField.text as NSString).floatValue
         item.imgURL = "https://dl.dropboxusercontent.com/u/97674776/images/gs6edge.png"
-        
+        item.productId = "00006"
         saveToDB(item)
     }
     
@@ -44,6 +44,30 @@ class AddItemViewController: UIViewController {
             ///Dismiss this viewcontroller
             self.dismissViewControllerAnimated(true, completion: nil)
         })
+//        if Reachability.isConnectedToNetwork(){
+//            Reachability.isConnectedToCloudantDataProxy { (response) -> () in
+//                if response{
+//                    WishListDataManager.sharedInstance.saveItemToWishList(item, callback: { () -> () in
+//                        ///Dismiss this viewcontroller
+//                        self.dismissViewControllerAnimated(true, completion: nil)
+//                    })
+//                }else{
+//                    LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+//                        if success{
+//                            self.items = items
+//                            self.tableView.reloadData()
+//                        }
+//                    }
+//                }
+//            }
+//        }else{
+//            LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
+//                if success{
+//                    self.items = items
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
     }
     
     @IBAction func imageButtonTapped(sender: AnyObject) {

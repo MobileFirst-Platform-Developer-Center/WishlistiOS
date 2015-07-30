@@ -14,5 +14,5 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemStoreLabel: UILabel!
     @IBOutlet weak var itemTitleLabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!    
-
+    @IBOutlet weak var addFromCatalogBtn: UIButton!
 }

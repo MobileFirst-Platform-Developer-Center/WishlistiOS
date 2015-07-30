@@ -33,19 +33,25 @@ public class Reachability {
     }
     
     class func isConnectedToCloudantDataProxy(callback:(Bool)->())  {
-        let configurationPath = NSBundle.mainBundle().pathForResource("worklight", ofType: "plist")
-        let configuration = NSDictionary(contentsOfFile: configurationPath!)
-        let protocolString = configuration?["protocol"] as! String
-        let host = configuration?["host"] as! String
-        let port = configuration?["port"] as! String
-        let proxy = configuration?["dataproxy"] as! String
+//        var dataproxyUrl = NSUserDefaults.standardUserDefaults().objectForKey("DataProxyCustomServerURL") as? String
+//        if dataproxyUrl != nil {
+//            let url = NSURL(string: dataproxyUrl!) as NSURL!
+//            var request:NSURLRequest = NSURLRequest(URL: url)
+//            let queue:NSOperationQueue = NSOperationQueue()
+//            NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+//                
+//                if error != nil{
+//                    callback(false)
+//                }else{
+//                    callback(true)
+//                }
+//            })
+//        }
         
-        let url = NSURL(string: "\(protocolString)://\(host):\(port)/\(proxy)") as NSURL!
-        var request:NSURLRequest = NSURLRequest(URL: url)
-        let queue:NSOperationQueue = NSOperationQueue()
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            
-            if error != nil{
+        var manager:IMFDataManager = IMFDataManager.initializeWithUrl(NSUserDefaults.standardUserDefaults().objectForKey("DataProxyCustomServerURL") as! String)
+        
+        manager.remoteStore("wishlist17", completionHandler: { (createdStore:CDTStore!, err:NSError!) -> Void in
+            if err != nil{
                 callback(false)
             }else{
                 callback(true)

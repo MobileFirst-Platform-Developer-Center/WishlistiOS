@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A216g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YdW-lg-4wc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A235d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YdW-lg-4wc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -865,7 +865,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RGC-VX-ePb">
-                                <rect key="frame" x="25" y="233" width="325" height="41"/>
+                                <rect key="frame" x="25" y="304" width="325" height="41"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -886,17 +886,17 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqX-kC-iGs">
-                                <rect key="frame" x="25" y="162" width="325" height="1"/>
+                                <rect key="frame" x="25" y="233" width="325" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.16862745100000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2a-Lj-Rfw">
-                                <rect key="frame" x="25" y="274" width="325" height="1"/>
+                                <rect key="frame" x="25" y="345" width="325" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.16862745100000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="USERNAME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D9s-Vk-m5C">
-                                <rect key="frame" x="25" y="121" width="325" height="41"/>
+                                <rect key="frame" x="25" y="192" width="325" height="41"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -916,30 +916,41 @@
                                     <outlet property="delegate" destination="Qqt-rZ-6lM" id="87Y-mJ-TEY"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login icon" translatesAutoresizingMaskIntoConstraints="NO" id="OY6-ww-EWg">
+                                <rect key="frame" x="162" y="98" width="50" height="49"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="SWk-Tc-LBw"/>
+                                    <constraint firstAttribute="height" constant="49" id="Syz-WX-MJ2"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="D9s-Vk-m5C" firstAttribute="width" secondItem="wqX-kC-iGs" secondAttribute="width" id="4zr-69-dsQ"/>
                             <constraint firstAttribute="width" secondItem="7Bm-wk-JOW" secondAttribute="width" id="5Hi-Gk-uyH"/>
+                            <constraint firstAttribute="centerX" secondItem="OY6-ww-EWg" secondAttribute="centerX" id="5cW-C9-bZ0"/>
                             <constraint firstItem="RGC-VX-ePb" firstAttribute="top" secondItem="wqX-kC-iGs" secondAttribute="bottom" constant="70" id="6ym-kY-27t"/>
                             <constraint firstAttribute="centerX" secondItem="D9s-Vk-m5C" secondAttribute="centerX" id="7OZ-Zq-DP2"/>
                             <constraint firstAttribute="trailing" secondItem="hWY-c0-tFO" secondAttribute="trailing" id="7SO-0Q-Rds"/>
-                            <constraint firstItem="D9s-Vk-m5C" firstAttribute="top" secondItem="hWY-c0-tFO" secondAttribute="bottom" constant="57" id="9Ld-7s-fs1"/>
+                            <constraint firstItem="D9s-Vk-m5C" firstAttribute="top" secondItem="hWY-c0-tFO" secondAttribute="bottom" constant="128" id="9Ld-7s-fs1"/>
                             <constraint firstItem="D9s-Vk-m5C" firstAttribute="leading" secondItem="Jwn-o3-LSG" secondAttribute="leadingMargin" constant="9" id="9Lt-Sa-8ad"/>
                             <constraint firstItem="wqX-kC-iGs" firstAttribute="trailing" secondItem="RGC-VX-ePb" secondAttribute="trailing" id="MjX-uO-sip"/>
                             <constraint firstItem="wqX-kC-iGs" firstAttribute="top" secondItem="D9s-Vk-m5C" secondAttribute="bottom" id="OkC-1t-YaZ"/>
                             <constraint firstItem="q2a-Lj-Rfw" firstAttribute="width" secondItem="RGC-VX-ePb" secondAttribute="width" id="Pz5-Ue-487"/>
                             <constraint firstItem="q2a-Lj-Rfw" firstAttribute="leading" secondItem="RGC-VX-ePb" secondAttribute="leading" id="VR2-36-lgW"/>
                             <constraint firstItem="hWY-c0-tFO" firstAttribute="top" secondItem="7Bm-wk-JOW" secondAttribute="bottom" id="W44-kZ-Tdp"/>
-                            <constraint firstItem="RGC-VX-ePb" firstAttribute="top" secondItem="Jwn-o3-LSG" secondAttribute="top" constant="233" id="WXB-cM-DQK"/>
+                            <constraint firstItem="RGC-VX-ePb" firstAttribute="top" secondItem="Jwn-o3-LSG" secondAttribute="top" constant="304" id="WXB-cM-DQK"/>
                             <constraint firstItem="hWY-c0-tFO" firstAttribute="leading" secondItem="Jwn-o3-LSG" secondAttribute="leading" id="ZbS-0H-qMO"/>
-                            <constraint firstItem="LbB-WZ-B6L" firstAttribute="top" secondItem="q2a-Lj-Rfw" secondAttribute="bottom" constant="392" id="gSD-zE-PT5"/>
+                            <constraint firstItem="LbB-WZ-B6L" firstAttribute="top" secondItem="q2a-Lj-Rfw" secondAttribute="bottom" constant="321" id="gSD-zE-PT5"/>
                             <constraint firstItem="q2a-Lj-Rfw" firstAttribute="top" secondItem="RGC-VX-ePb" secondAttribute="bottom" id="hMM-oZ-jUb"/>
+                            <constraint firstAttribute="centerX" secondItem="OY6-ww-EWg" secondAttribute="centerX" id="l6W-lT-9xG"/>
                             <constraint firstItem="wqX-kC-iGs" firstAttribute="leading" secondItem="D9s-Vk-m5C" secondAttribute="leading" id="ly8-Ge-t2N"/>
                             <constraint firstItem="RGC-VX-ePb" firstAttribute="leading" secondItem="wqX-kC-iGs" secondAttribute="leading" id="pWf-2j-Yx6"/>
                             <constraint firstItem="7Bm-wk-JOW" firstAttribute="top" secondItem="Jwn-o3-LSG" secondAttribute="top" id="r2h-E4-y5X"/>
                             <constraint firstAttribute="centerX" secondItem="7Bm-wk-JOW" secondAttribute="centerX" id="u30-Ur-xdu"/>
+                            <constraint firstItem="OY6-ww-EWg" firstAttribute="top" secondItem="hWY-c0-tFO" secondAttribute="bottom" constant="34" id="zrQ-bf-LNT"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -962,7 +973,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="separatorColor" red="0.0" green="0.52156862749999999" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTableViewCell" rowHeight="100" id="7Yo-ji-nTm" customClass="ItemTableViewCell" customModule="ParkStore" customModuleProvider="target">
@@ -972,6 +983,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ItemBackPanel" translatesAutoresizingMaskIntoConstraints="NO" id="xLN-L7-pgf">
+                                            <rect key="frame" x="8" y="5" width="359" height="90"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-3e-7XP">
                                             <rect key="frame" x="8" y="5" width="90" height="90"/>
                                             <animations/>
@@ -1027,7 +1043,7 @@
                                             </constraints>
                                             <color key="tintColor" red="0.0" green="0.52156862749999999" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal">
-                                                <color key="titleColor" red="0.0" green="0.52156862749999999" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
                                     </subviews>
@@ -1062,6 +1078,7 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="addFromCatalogBtn" destination="Bwg-Ci-lQg" id="CI8-u5-vrd"/>
                                     <outlet property="itemImageView" destination="WPa-3e-7XP" id="ANp-RZ-nRu"/>
                                     <outlet property="itemPriceLabel" destination="MU9-3Z-49D" id="QAN-tJ-Sue"/>
                                     <outlet property="itemStoreLabel" destination="mSI-BZ-5jv" id="Oxu-lp-FPF"/>
@@ -1212,6 +1229,7 @@
     </scenes>
     <resources>
         <image name="camera" width="185" height="127"/>
+        <image name="login icon" width="91" height="91"/>
         <image name="menu" width="22" height="15"/>
         <image name="storeCamera" width="152" height="194"/>
     </resources>

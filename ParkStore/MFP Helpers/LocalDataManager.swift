@@ -171,6 +171,7 @@ class LocalDataManager:NSObject{
             } else{
                     println("Added an item to the adapter")
                self.getAllItemsFromAdapter(callback)
+                callback(true,self.itemsFromAdapter)
             }
             
         }

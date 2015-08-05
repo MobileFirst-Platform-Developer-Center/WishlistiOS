@@ -75,10 +75,9 @@ class CatalogTableViewController: UITableViewController {
                 LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
                     if success{
                         //TODO
-//                        LocalDataManager.sharedInstance.saveItemToWishList(item, callback: { () -> () in
-//                            println("Added data to wishlist from catalog")
-//                            UIAlertView(title: "Wishlist", message: "Added Item to Wishlist", delegate: nil, cancelButtonTitle: "OK").show()
-//                        })
+                        LocalDataManager.sharedInstance.saveItemToLocalStoreList(item, callback: { (success, [Item]!) -> () in
+                            UIAlertView(title: "Wishlist", message: "Added Item to Wishlist", delegate: nil, cancelButtonTitle: "OK").show()
+                        })
 
                     }
                 }

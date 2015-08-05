@@ -40,34 +40,22 @@ class AddItemViewController: UIViewController {
     }
     
     func saveToDB(item: Item){
-        WishListDataManager.sharedInstance.saveItemToWishList(item, callback: { () -> () in
-            ///Dismiss this viewcontroller
-            self.dismissViewControllerAnimated(true, completion: nil)
-        })
-//        if Reachability.isConnectedToNetwork(){
-//            Reachability.isConnectedToCloudantDataProxy { (response) -> () in
-//                if response{
-//                    WishListDataManager.sharedInstance.saveItemToWishList(item, callback: { () -> () in
-//                        ///Dismiss this viewcontroller
-//                        self.dismissViewControllerAnimated(true, completion: nil)
-//                    })
-//                }else{
-//                    LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
-//                        if success{
-//                            self.items = items
-//                            self.tableView.reloadData()
-//                        }
-//                    }
-//                }
-//            }
-//        }else{
-//            LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
-//                if success{
-//                    self.items = items
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
+        if Reachability.isConnectedToNetwork(){
+            Reachability.isConnectedToCloudantDataProxy { (response) -> () in
+                if response{
+                    WishListDataManager.sharedInstance.saveItemToWishList(item, callback: { () -> () in
+                        ///Dismiss this viewcontroller
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                }else{
+                    //save to local adapter
+                    LocalDataManager.sharedInstance.saveItemToLocalStoreList(item, callback: { (success, [Item]!) -> () in
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                    
+                }
+            }
+        }
     }
     
     @IBAction func imageButtonTapped(sender: AnyObject) {

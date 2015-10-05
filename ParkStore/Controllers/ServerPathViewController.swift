@@ -46,8 +46,8 @@ class ServerPathViewController: UIViewController {
         serverTextField.text = "Default"
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = event.allTouches()?.first as! UITouch
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = event!.allTouches()?.first as UITouch!
         
         if !(touch.view is UITextField){
             view.endEditing(true)

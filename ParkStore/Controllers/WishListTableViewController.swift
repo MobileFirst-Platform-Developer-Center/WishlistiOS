@@ -110,7 +110,7 @@ class WishListTableViewController: UITableViewController {
         CatalogDataManager.sharedInstance.imageFromURL(item.imgURL as String, callback: { (image) -> () in
             cell.itemImageView.image = image
         })
-        println(item.imgURL)
+        print(item.imgURL)
         return cell
     }
     
@@ -123,7 +123,7 @@ class WishListTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationViewController = segue.destinationViewController as! UIViewController
+        let destinationViewController = segue.destinationViewController 
         
         if destinationViewController.isKindOfClass(ViewItemViewController){
             let viewItemViewController = destinationViewController as! ViewItemViewController

@@ -1,7 +1,6 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '7.0'
+use_frameworks!
 
-pod 'IMFDataLocal', '1.0.0'
-
-
+pod 'IMFDataLocal'
+pod 'Alamofire', '~> 2.0'

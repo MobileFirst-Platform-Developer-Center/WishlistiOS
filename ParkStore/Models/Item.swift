@@ -15,6 +15,7 @@
 */
 
 import UIKit
+import CloudantToolkit
 
 @objc public class Item: NSObject, CDTDataObject {
     var title : NSString = ""
@@ -26,7 +27,7 @@ import UIKit
 
     
     func getLocalizedPrice() -> String {
-        var currencyFormatter = NSNumberFormatter()
+        let currencyFormatter = NSNumberFormatter()
         currencyFormatter.locale = NSLocale.currentLocale()
         currencyFormatter.maximumFractionDigits = 2
         currencyFormatter.minimumFractionDigits = 2

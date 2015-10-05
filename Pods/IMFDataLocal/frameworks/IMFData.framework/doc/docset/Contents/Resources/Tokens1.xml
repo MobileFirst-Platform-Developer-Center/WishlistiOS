@@ -36,6 +36,18 @@
             <NodeRef refid="1"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/IMFData/buildDate</TokenIdentifier>
+			<Abstract type="html">The build date for this SDK</Abstract>
+			<DeclaredIn>IMFDataManager.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)buildDate</Declaration>
+			
+			<ReturnValue><Abstract type="html">The build date for this SDK</Abstract></ReturnValue>
+			<Anchor>//api/name/buildDate</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

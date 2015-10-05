@@ -40,7 +40,7 @@ class LogInViewController: UIViewController {
         let username = usernameTextField.text
         let password = passwordTextField.text
         
-        challengeHandler.submitLogin(username, password: password)
+        challengeHandler.submitLogin(username!, password: password!)
         //access any secured item and on success move to next screen
         
     }
@@ -60,7 +60,7 @@ class LogInViewController: UIViewController {
 extension LogInViewController: UITextFieldDelegate {
 
     @IBAction func textFieldDidChange(sender: UITextField) {
-        if (!usernameTextField.text.isEmpty && !passwordTextField.text.isEmpty){
+        if (!usernameTextField.text!.isEmpty && !passwordTextField.text!.isEmpty){
             doneButton.enabled = true
         } else {
             doneButton.enabled = false

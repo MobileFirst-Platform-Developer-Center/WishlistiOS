@@ -15,6 +15,7 @@
 						<NodeRef refid="2"/>
 						<NodeRef refid="3"/>
 						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
 						
 					</Subnodes>
 				</Node>
@@ -25,9 +26,9 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="5"/>
 						<NodeRef refid="6"/>
 						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
 						
 					</Subnodes>
 				</Node>
@@ -136,9 +137,36 @@
             </Subnodes>
             
         </Node>
+		<Node id="5" type="file" documentType="reference">
+            <Name>CloudantToolkit</Name>
+            <Path>Classes/CloudantToolkit.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/CloudantToolkit.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/CloudantToolkit.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                
+                <Node type="section">
+                    <Path>Classes/CloudantToolkit.html</Path>
+                    <Name>Class Methods</Name>
+                    <Anchor>class_methods</Anchor>
+                </Node>
+                
+                
+            </Subnodes>
+            
+        </Node>
 		
 		
-        <Node id="5" type="file" documentType="reference">
+        <Node id="6" type="file" documentType="reference">
             <Name>CDTDataObject</Name>
             <Path>Protocols/CDTDataObject.html</Path>
             
@@ -165,7 +193,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="6" type="file" documentType="reference">
+		<Node id="7" type="file" documentType="reference">
             <Name>CDTObjectMapper</Name>
             <Path>Protocols/CDTObjectMapper.html</Path>
             
@@ -192,7 +220,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="7" type="file" documentType="reference">
+		<Node id="8" type="file" documentType="reference">
             <Name>CDTPropertySerializer</Name>
             <Path>Protocols/CDTPropertySerializer.html</Path>
             

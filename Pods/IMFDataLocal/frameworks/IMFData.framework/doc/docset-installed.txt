@@ -1,4 +1,4 @@
 Documentation set was installed to Xcode!
 
 Path: /Users/build/Library/Developer/Shared/Documentation/DocSets/IBM.IMFData.docset
-Time: 2015-03-18 19:06:43 +0000
+Time: 2015-09-11 18:18:00 +0000

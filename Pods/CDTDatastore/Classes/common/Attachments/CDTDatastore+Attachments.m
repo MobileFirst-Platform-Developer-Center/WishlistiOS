@@ -16,9 +16,9 @@
 
 #import "CDTDatastore+Attachments.h"
 
-#import "FMDatabase.h"
-#import "FMDatabaseAdditions.h"
-#import "FMDatabaseQueue.h"
+#import <FMDB/FMDatabase.h>
+#import <FMDB/FMDatabaseAdditions.h>
+#import <FMDB/FMDatabaseQueue.h>
 
 #import "TD_Database.h"
 #import "TD_Database+Attachments.h"
@@ -27,7 +27,6 @@
 #import "TDMisc.h"
 
 #import "CDTDocumentRevision.h"
-#import "CDTDocumentBody.h"
 #import "CDTAttachment.h"
 #import "CDTLogging.h"
 
@@ -93,7 +92,7 @@ static NSString *const CDTAttachmentsErrorDomain = @"CDTAttachmentsErrorDomain";
 
     @try {
         while ([r next]) {
-            CDTSavedAttachment *attachment = [self attachmentFromDbRow:r];
+            CDTSavedAttachment *attachment = [self attachmentFromDbRow:r inDatabase:db];
 
             if (attachment != nil) {
                 [attachments addObject:attachment];
@@ -110,7 +109,7 @@ static NSString *const CDTAttachmentsErrorDomain = @"CDTAttachmentsErrorDomain";
     return attachments;
 }
 
-- (CDTSavedAttachment *)attachmentFromDbRow:(FMResultSet *)r
+- (CDTSavedAttachment *)attachmentFromDbRow:(FMResultSet *)r inDatabase:(FMDatabase *)db
 {
     // SELECT sequence, filename, key, type, encoding, length, encoded_length revpos ...
     SequenceNumber sequence = [r longForColumn:@"sequence"];
@@ -126,13 +125,13 @@ static NSString *const CDTAttachmentsErrorDomain = @"CDTAttachmentsErrorDomain";
         return nil;
     }
 
-    NSString *filePath = [self.database.attachmentStore pathForKey:*(TDBlobKey *)keyData.bytes];
+    id<CDTBlobReader> blob = [self.database blobForKey:*(TDBlobKey *)keyData.bytes withDatabase:db];
 
     NSString *type = [r stringForColumn:@"type"];
     NSInteger size = [r longForColumn:@"length"];
     NSInteger revpos = [r longForColumn:@"revpos"];
     TDAttachmentEncoding encoding = [r intForColumn:@"encoding"];
-    CDTSavedAttachment *attachment = [[CDTSavedAttachment alloc] initWithPath:filePath
+    CDTSavedAttachment *attachment = [[CDTSavedAttachment alloc] initWithBlob:blob
                                                                          name:name
                                                                          type:type
                                                                          size:size
@@ -173,8 +172,7 @@ static NSString *const CDTAttachmentsErrorDomain = @"CDTAttachmentsErrorDomain";
         return nil;
     }
 
-    BOOL success =
-        [self.database.attachmentStore storeBlob:attachmentContent creatingKey:&outKey error:error];
+    BOOL success = [self.database storeBlob:attachmentContent creatingKey:&outKey error:error];
 
     if (!success) {
         // -storeBlob:creatingKey:error: will have filled in error

@@ -1,42 +1,49 @@
 PODS:
-  - CDTDatastore (0.14.0):
-    - CDTDatastore/no-arc (= 0.14.0)
-    - CocoaLumberjack (= 2.0.0-rc)
+  - Alamofire (2.0.2)
+  - CDTDatastore (0.18.0):
+    - CDTDatastore/standard (= 0.18.0)
+  - CDTDatastore/common-dependencies (0.18.0):
+    - CDTDatastore/no-arc
+    - CocoaLumberjack (~> 2.0)
+  - CDTDatastore/no-arc (0.18.0)
+  - CDTDatastore/standard (0.18.0):
+    - CDTDatastore/common-dependencies
     - FMDB (= 2.3)
-  - CDTDatastore/no-arc (0.14.0):
-    - CocoaLumberjack (= 2.0.0-rc)
-    - FMDB (= 2.3)
-  - CloudantQueryObjc (1.0.2):
-    - CDTDatastore (>= 0.13)
-    - CocoaLumberjack (= 2.0.0-rc)
-  - CloudantToolkitLocal (1.0.1):
-    - CDTDatastore (~> 0.14.0)
-    - CloudantQueryObjc (~> 1.0.2)
-  - CocoaLumberjack (2.0.0-rc):
-    - CocoaLumberjack/Default (= 2.0.0-rc)
-    - CocoaLumberjack/Extensions (= 2.0.0-rc)
-  - CocoaLumberjack/Core (2.0.0-rc)
-  - CocoaLumberjack/Default (2.0.0-rc):
+  - CloudantToolkitLocal (1.1.1):
+    - CloudantToolkitLocal/standard (= 1.1.1)
+  - CloudantToolkitLocal/standard (1.1.1):
+    - CDTDatastore (~> 0.18.0)
+  - CocoaLumberjack (2.0.1):
+    - CocoaLumberjack/Default (= 2.0.1)
+    - CocoaLumberjack/Extensions (= 2.0.1)
+  - CocoaLumberjack/Core (2.0.1)
+  - CocoaLumberjack/Default (2.0.1):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.0.0-rc):
+  - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
   - FMDB (2.3):
     - FMDB/standard (= 2.3)
   - FMDB/common (2.3)
   - FMDB/standard (2.3):
     - FMDB/common
-  - IMFDataLocal (1.0.0):
-    - CloudantToolkitLocal (~> 1.0.0)
+  - IBMMobileFirstPlatformFoundation (7.1.0)
+  - IMFDataLocal (1.1.1):
+    - IMFDataLocal/standard (= 1.1.1)
+  - IMFDataLocal/standard (1.1.1):
+    - CloudantToolkitLocal (~> 1.1.1)
+    - IBMMobileFirstPlatformFoundation (~> 7.1.0)
 
 DEPENDENCIES:
-  - IMFDataLocal (= 1.0.0)
+  - Alamofire (~> 2.0)
+  - IMFDataLocal
 
 SPEC CHECKSUMS:
-  CDTDatastore: ed983dbcdaf8cb4a97b039fc8f5f06cf74492c4b
-  CloudantQueryObjc: 70612b926eb730aa35713ceb119bb34fa4b15d65
-  CloudantToolkitLocal: 7696c3cae89658562f09ab73a5b83db0de808fe4
-  CocoaLumberjack: 04c5b9b7479dd4276a09700fcd6644423ea1751c
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
+  CDTDatastore: b6e99912058cc904e954f882dca5ac7b1f328352
+  CloudantToolkitLocal: b97e75a0d3311c3a699de3b0cbda1176c69c28b4
+  CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
   FMDB: 773d79bb74226959b7e2286b1d6e0bd857c88915
-  IMFDataLocal: 7aed6f2d3bf6cf59f5dfdd8f0997402daad3d9f9
+  IBMMobileFirstPlatformFoundation: 58fd226facedc5c51d3411ebe95d6a283eeab20f
+  IMFDataLocal: a863d80793077b6e4dc70703d08617f28766a33f
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.38.2

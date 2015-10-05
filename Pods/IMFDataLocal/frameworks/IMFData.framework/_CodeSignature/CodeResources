@@ -6,15 +6,19 @@
 	<dict>
 		<key>Headers/IMFData.h</key>
 		<data>
-		BGufRp6h/N/09QvC2OEz/WW7wXk=
+		x7PP7gtwAJASW400fkLNtSoFgus=
+		</data>
+		<key>Headers/IMFDataManager+EncryptionKey.h</key>
+		<data>
+		SFCkJe8NMS60T1whRpuBHKgvMqQ=
 		</data>
 		<key>Headers/IMFDataManager.h</key>
 		<data>
-		6Z8E8uYp8RYar8EF8x3oWSZhqBs=
+		ymjCoXcSj9HX0Bq4dlGsz0/uUpE=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MrLNxlZvWSOLoFLZO4YFzygr51A=
+		RBgUUJa+bYuWQEob1vvuzzdScEk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -25,11 +29,15 @@
 	<dict>
 		<key>Headers/IMFData.h</key>
 		<data>
-		BGufRp6h/N/09QvC2OEz/WW7wXk=
+		x7PP7gtwAJASW400fkLNtSoFgus=
+		</data>
+		<key>Headers/IMFDataManager+EncryptionKey.h</key>
+		<data>
+		SFCkJe8NMS60T1whRpuBHKgvMqQ=
 		</data>
 		<key>Headers/IMFDataManager.h</key>
 		<data>
-		6Z8E8uYp8RYar8EF8x3oWSZhqBs=
+		ymjCoXcSj9HX0Bq4dlGsz0/uUpE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

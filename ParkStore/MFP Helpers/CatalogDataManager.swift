@@ -15,7 +15,8 @@
 */
 
 import Foundation
-
+import IBMMobileFirstPlatformFoundation
+import Alamofire
 
 class CatalogDataManager: NSObject{
     
@@ -43,8 +44,8 @@ class CatalogDataManager: NSObject{
                 
                 callback(false, nil)
             }else{
-                var responseJSON = wlresponse.responseJSON as NSDictionary
-                var responseText = responseJSON.objectForKey("getAllProductsDetailsReturn") as! NSArray
+                let responseJSON = wlresponse.responseJSON as NSDictionary
+                let responseText = responseJSON.objectForKey("getAllProductsDetailsReturn") as! NSArray
                 
 //                var jsonData:NSData = responseText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
                 
@@ -56,7 +57,7 @@ class CatalogDataManager: NSObject{
                 for item  in responseText{
                     let itemDict:NSDictionary = item as! NSDictionary
                     
-                    var item:Item = Item()
+                    let item:Item = Item()
                     item.title =  itemDict.objectForKey("title") as! String
                     item.store = itemDict.objectForKey("store") as! String
                     let priceString = itemDict.objectForKey("price") as! NSString

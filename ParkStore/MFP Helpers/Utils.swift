@@ -49,7 +49,7 @@ class Utils{
     }
     
     class func getCustomMFPServerUrlFromUserDefaults() ->NSURL{
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         return defaults.URLForKey("MFPCustomServerURL")!
     }
 }

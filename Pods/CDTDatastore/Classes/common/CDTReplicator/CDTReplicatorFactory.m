@@ -22,7 +22,6 @@
 #import "CDTPullReplication.h"
 #import "CDTPushReplication.h"
 #import "CDTDocumentRevision.h"
-#import "CDTDocumentBody.h"
 #import "CDTLogging.h"
 
 #import "TDReplicatorManager.h"
@@ -45,9 +44,16 @@ static NSString *const CDTReplicatorFactoryErrorDomain = @"CDTReplicatorFactoryE
 {
     self = [super init];
     if (self) {
-        self.manager = dsManager;
-        TD_DatabaseManager *dbManager = dsManager.manager;
-        self.replicatorManager = [[TDReplicatorManager alloc] initWithDatabaseManager:dbManager];
+        
+        if(dsManager){
+            _manager = dsManager;
+            TD_DatabaseManager *dbManager = dsManager.manager;
+            _replicatorManager = [[TDReplicatorManager alloc] initWithDatabaseManager:dbManager];
+        } else {
+            self = nil;
+            CDTLogWarn(CDTREPLICATION_LOG_CONTEXT,
+                       @"Datastore manager is nil, there isn't a local datastore to replicate with.");
+        }
     }
     return self;
 }

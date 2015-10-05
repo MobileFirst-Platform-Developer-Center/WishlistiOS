@@ -15,6 +15,7 @@
 */
 
 import UIKit
+import IBMMobileFirstPlatformFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         WLClient.sharedInstance().registerChallengeHandler(ParkStoreChallengeHandler())
-        var customServerUrl = NSUserDefaults.standardUserDefaults().objectForKey("MFPCustomServerURL") as? String
+        let customServerUrl = NSUserDefaults.standardUserDefaults().objectForKey("MFPCustomServerURL") as? String
         
         if customServerUrl != nil{
             WLClient.sharedInstance().setServerUrl(NSURL(string: customServerUrl!))
@@ -56,14 +57,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        println("Device Token \(deviceToken.description)")
+        print("Device Token \(deviceToken.description)")
         WLPush.sharedInstance().tokenFromClient = deviceToken.description
         WLPush.sharedInstance().onReadyToSubscribeListener = OnReadyToSubscribeDelegate()
         WLClient.sharedInstance().wlConnectWithDelegate(ConnnectionDelegate())
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        println("Got remote Notification. Data : \(userInfo.description)")
+        print("Got remote Notification. Data : \(userInfo.description)")
         WLAnalytics.sharedInstance().log("Received remote task via push notification", withMetadata: NSDictionary() as [NSObject : AnyObject])
         //TODO Add task
         //construct item
@@ -75,11 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     class ConnnectionDelegate : NSObject, WLDelegate{
         
         func onFailure(response: WLFailResponse!) {
-            println("Connection Failure \(response.responseText)")
+            print("Connection Failure \(response.responseText)")
         }
         
         func onSuccess(response: WLResponse!) {
-            println("Connection successfull \(response.responseText)" )
+            print("Connection successfull \(response.responseText)" )
         }
     }
     
@@ -91,11 +92,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     class PushNotificationDelegate :NSObject, WLDelegate{
         func onSuccess(response: WLResponse!) {
-            println("Successfully subscribed to Push notification tag")
+            print("Successfully subscribed to Push notification tag")
         }
         
         func onFailure(response: WLFailResponse!) {
-            println("Could not subscribe to Tags \(response.responseText)")
+            print("Could not subscribe to Tags \(response.responseText)")
         }
     }
 

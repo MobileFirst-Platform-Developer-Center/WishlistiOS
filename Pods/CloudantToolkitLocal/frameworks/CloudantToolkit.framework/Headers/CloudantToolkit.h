@@ -28,4 +28,24 @@ FOUNDATION_EXPORT const unsigned char CloudantToolkitVersionString[];
 #import <CloudantToolkit/CDTDataObjectMapper.h>
 #import <CloudantToolkit/CDTPropertySerializer.h>
 #import <CloudantToolkit/CDTHttpHelper.h>
-#import <CloudantToolkit/CloudantToolkitVersion.h>
+#import <CloudantToolkit/CDTOperation.h>
+#import <CloudantToolkit/CDTStoreOperation.h>
+#import <CloudantToolkit/CDTQueryOperation.h>
+#import <CloudantToolkit/CDTCloudantQueryOperation.h>
+#import <CloudantToolkit/CDTQueryCursor.h>
+
+/** 
+ * The CloudantToolkit class allows you to get the version and build date.
+ */
+@interface CloudantToolkit: NSObject
+
+/**
+ @return the version of CloudantToolkit
+ */
++(NSString*) version;
+
+/**
+ @return the build date of CloudantToolkit
+ */
++(NSString*) buildDate;
+@end

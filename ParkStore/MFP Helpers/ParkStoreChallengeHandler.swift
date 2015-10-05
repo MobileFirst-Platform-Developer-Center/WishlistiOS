@@ -15,7 +15,7 @@
 */
 
 import Foundation
-
+import IBMMobileFirstPlatformFoundation
 
 class ParkStoreChallengeHandler: ChallengeHandler{
     
@@ -31,7 +31,7 @@ class ParkStoreChallengeHandler: ChallengeHandler{
         logInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LogInViewController") as! LogInViewController
         logInViewController.challengeHandler = self
         // Present login view controller
-        let root = UIApplication.sharedApplication().keyWindow?.rootViewController
+        let root = UIApplication.sharedApplication().delegate?.window!?.rootViewController
         root?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
         root?.presentViewController(logInViewController, animated: true, completion: nil)
         }
@@ -43,16 +43,16 @@ class ParkStoreChallengeHandler: ChallengeHandler{
     }
     
     override func onSuccess(response: WLResponse!) {
-        println("--------LOGIN SUCCESS--------")
-        println(response)
+        print("--------LOGIN SUCCESS--------")
+        print(response)
         logInViewController.dismissViewControllerAnimated(true, completion: nil)
         logInViewController = nil
         self.submitSuccess(response)
     }
     
     override func isCustomResponse(response: WLResponse!) -> Bool {
-        println("---------CustomResponse---------")
-        println(response.getResponseJson())
+        print("---------CustomResponse---------")
+        print(response)
         if (response != nil && response.getResponseJson() != nil) {
             let jsonResponse = response.getResponseJson() as NSDictionary
             let authRequired = jsonResponse.objectForKey("authStatus") as! String!
@@ -68,6 +68,6 @@ class ParkStoreChallengeHandler: ChallengeHandler{
     }
 }
 
-extension ParkStoreChallengeHandler: WLDelegate {
-    
-}
+//extension ParkStoreChallengeHandler: WLDelegate {
+//    
+//}

@@ -27,6 +27,11 @@
 @property (readonly, atomic) NSString *name;
 
 /**
+ Indicates whether a CDTObjectMapper must be set when @datatype is part of the JSON body.
+ */
+@property (atomic) BOOL requireMapperWithDatatype;
+
+/**
  Creates a CDTStore that is local to the device.
  @param datastore Specifies the CDTDatastore from which to create the local CDTStore.
  @return The newly created CDTStore.
@@ -99,5 +104,11 @@ Deletes an index with a data type.
  @param completionHandler Specifies the completionHandler to call when the fetch is complete. Fetching an object is an asynchronous event.  If error is null, the operation was successful.
  */
 -(void) fetchById: (NSString*) documentId completionHandler: (void (^)(id object, NSError *error))completionHandler;
+
+/**
+ * Add an operation to the database queue
+ * @param operation Operation to add to the database operation queue
+ */
+- (void) addOperation:(NSOperation*) operation;
 
 @end

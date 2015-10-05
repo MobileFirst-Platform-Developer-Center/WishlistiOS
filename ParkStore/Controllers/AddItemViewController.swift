@@ -38,10 +38,10 @@ class AddItemViewController: UIViewController {
         view.endEditing(true)
         
         ///Create a new item
-        var item = Item()
-        item.title = titleTextField.text
-        item.store = storeTextField.text
-        item.price = (priceTextField.text as NSString).floatValue
+        let item = Item()
+        item.title = titleTextField.text!
+        item.store = storeTextField.text!
+        item.price = (priceTextField.text as NSString!).floatValue
         item.imgURL = "https://dl.dropboxusercontent.com/u/97674776/images/gs6edge.png"
         item.productId = "00006"
         saveToDB(item)
@@ -57,7 +57,7 @@ class AddItemViewController: UIViewController {
                     })
                 }else{
                     //save to local adapter
-                    LocalDataManager.sharedInstance.saveItemToLocalStoreList(item, callback: { (success, [Item]!) -> () in
+                    LocalDataManager.sharedInstance.saveItemToLocalStoreList(item, callback: { (success, _: [Item]!) -> () in
                         self.dismissViewControllerAnimated(true, completion: nil)
                     })
                     
@@ -70,8 +70,8 @@ class AddItemViewController: UIViewController {
         imageButton.selected = true
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = event.allTouches()?.first as! UITouch
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = event!.allTouches()?.first as UITouch!
         
         if !(touch.view is UITextField){
             view.endEditing(true)
@@ -86,7 +86,7 @@ extension AddItemViewController: UITextFieldDelegate {
         if textField.tag == 2 {
             let nonNumberSet = NSCharacterSet(charactersInString: "0123456789.").invertedSet
         
-            return (count(string.stringByTrimmingCharactersInSet(nonNumberSet)) > 0)
+            return (string.stringByTrimmingCharactersInSet(nonNumberSet).characters.count > 0)
         }else {
             return true
         }

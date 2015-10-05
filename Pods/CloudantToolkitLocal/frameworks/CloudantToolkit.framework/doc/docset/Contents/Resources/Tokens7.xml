@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/CDTPropertySerializer.html">
+	<File path="Protocols/CDTObjectMapper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/CDTPropertySerializer</TokenIdentifier>
-			<Abstract type="html">Provides a custom serializer for a class.  You can handle cross-platform serialization of any object or override the default serialization of an object.  For example, CDTDataObjectMapper serializes NSDate objects.  However, you can use this extension to override how NSDate is serialized.  You might also provide serialization of CLLocation objects, which are currently ignored by the CDTDataObjectMapper.</Abstract>
-			<DeclaredIn>CDTPropertySerializer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/CDTObjectMapper</TokenIdentifier>
+			<Abstract type="html">Provides the ability to insert custom code to map native objects onto CDTDocumentRevisions.  This allows the developer to program with native objects and persist them to Cloudant.</Abstract>
+			<DeclaredIn>CDTObjectMapper.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
@@ -13,42 +13,96 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/CDTPropertySerializer/propertyValueToJSONValue:error:</TokenIdentifier>
-			<Abstract type="html">Get the JSON representation for the property value.</Abstract>
-			<DeclaredIn>CDTPropertySerializer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/CDTObjectMapper/objectToDocument:error:</TokenIdentifier>
+			<Abstract type="html">Maps a native Object to a CDTDocumentRevision.</Abstract>
+			<DeclaredIn>CDTObjectMapper.h</DeclaredIn>
 			
-			<Declaration>- (id)propertyValueToJSONValue:(id)propertyValue error:(NSError **)error</Declaration>
+			<Declaration>- (CDTDocumentRevision *)objectToDocument:(id)object error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>propertyValue</Name>
-					<Abstract type="html">The navtive property value to be serialized to a JSON dictionary.</Abstract>
+					<Name>object</Name>
+					<Abstract type="html">The input Object</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">Error that occurred during serilization or nil</Abstract>
+					<Abstract type="html">Error found during mapping or nil</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The JSON representation for the property value.</Abstract></ReturnValue>
-			<Anchor>//api/name/propertyValueToJSONValue:error:</Anchor>
+			<ReturnValue><Abstract type="html">the mapped CDTDocumentRevision</Abstract></ReturnValue>
+			<Anchor>//api/name/objectToDocument:error:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/CDTPropertySerializer/jsonValueToPropertyValue:error:</TokenIdentifier>
-			<Abstract type="html">Get the property value from the JSON representation</Abstract>
-			<DeclaredIn>CDTPropertySerializer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/CDTObjectMapper/documentToObject:error:</TokenIdentifier>
+			<Abstract type="html">Maps a CDTDocumentRevision to a native Object.</Abstract>
+			<DeclaredIn>CDTObjectMapper.h</DeclaredIn>
 			
-			<Declaration>- (id)jsonValueToPropertyValue:(id)jsonValue error:(NSError **)error</Declaration>
+			<Declaration>- (id)documentToObject:(CDTDocumentRevision *)document error:(NSError **)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>jsonValue</Name>
-					<Abstract type="html">The input JSON representation</Abstract>
+					<Name>document</Name>
+					<Abstract type="html">The CDTDocumentRevision to map</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">Error that occurred during deserilization or nil</Abstract>
+					<Abstract type="html">Error found during mapping or nil</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The native property value</Abstract></ReturnValue>
-			<Anchor>//api/name/jsonValueToPropertyValue:error:</Anchor>
+			<ReturnValue><Abstract type="html">the mapped native Object</Abstract></ReturnValue>
+			<Anchor>//api/name/documentToObject:error:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/CDTObjectMapper/dataTypeForClassName:</TokenIdentifier>
+			<Abstract type="html">Looks up the data type for a given class.</Abstract>
+			<DeclaredIn>CDTObjectMapper.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)dataTypeForClassName:(NSString *)className</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>className</Name>
+					<Abstract type="html">The name of the class to lookup</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The dataType for the class.</Abstract></ReturnValue>
+			<Anchor>//api/name/dataTypeForClassName:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/CDTObjectMapper/classNameForDataType:</TokenIdentifier>
+			<Abstract type="html">Looks up the Class for a given data type.</Abstract>
+			<DeclaredIn>CDTObjectMapper.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)classNameForDataType:(NSString *)dataType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dataType</Name>
+					<Abstract type="html">The data type to lookup</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The class name for the data type.</Abstract></ReturnValue>
+			<Anchor>//api/name/classNameForDataType:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/CDTObjectMapper/setDataType:forClassName:</TokenIdentifier>
+			<Abstract type="html">Associates a data type with a class name</Abstract>
+			<DeclaredIn>CDTObjectMapper.h</DeclaredIn>
+			
+			<Declaration>- (void)setDataType:(NSString *)dataType forClassName:(NSString *)className</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dataType</Name>
+					<Abstract type="html">The data type to associate with the class</Abstract>
+				</Parameter><Parameter>
+					<Name>className</Name>
+					<Abstract type="html">The class name to be associated with the dataType</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDataType:forClassName:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

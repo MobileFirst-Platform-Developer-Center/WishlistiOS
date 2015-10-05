@@ -15,6 +15,9 @@
 */
 
 import Foundation
+import CloudantToolkit
+import IMFData
+import IBMMobileFirstPlatformFoundation
 
 class LocalDataManager:NSObject{
     var localStore:CDTStore?
@@ -32,8 +35,13 @@ class LocalDataManager:NSObject{
     func setUpLocalDB(){
         var manager:IMFDataManager
         manager = IMFDataManager.initializeWithUrl("http:localhost:9080/data")
-        var err:NSErrorPointer = NSErrorPointer()
-        localStore = manager.localStore("wishlist", error: err)
+        let err:NSErrorPointer = NSErrorPointer()
+        do {
+            localStore = try manager.localStore("wishlist")
+        } catch let error as NSError {
+            err.memory = error
+            localStore = nil
+        }
         if err==nil {
             //Error
         }else{
@@ -56,7 +64,7 @@ class LocalDataManager:NSObject{
             self.localStore!.performQuery(query, completionHandler: { (results, error) -> Void in
                 if nil != error {
                     // Handle error
-                    println("could not retrieve all the data from local store \(error.debugDescription)")
+                    print("could not retrieve all the data from local store \(error.debugDescription)")
                 } else {
 //                    callback(true, (results as! [Item]))
                     self.itemsFromLocalStore.removeAll(keepCapacity: false)
@@ -65,9 +73,9 @@ class LocalDataManager:NSObject{
                     }
 
                     for item in self.itemsFromLocalStore{
-                        println("Item : :  \(item.title)")
+                        print("Item : :  \(item.title)")
                     }
-                    println("got all records")
+                    print("got all records")
                     callback(true, (self.itemsFromLocalStore))
                 }
             })
@@ -90,13 +98,12 @@ class LocalDataManager:NSObject{
                 UIAlertView(title: "ParkStore", message: "An error occured while retrieving data from adapter.", delegate: nil, cancelButtonTitle: "OK").show()
             }else{
                 var responseJSONString = wlResponse.responseText as NSString
-                println("Raw data from adapter \(responseJSONString.description)")
+                print("Raw data from adapter \(responseJSONString.description)")
                 var data: NSData = responseJSONString.dataUsingEncoding(NSUTF8StringEncoding)!
                 var error: NSError?
 
                 // convert NSData to 'AnyObject'
-                let JSONObj = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0),
-                    error: &error) as! NSArray
+                let JSONObj = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))) as! NSArray
                 self.itemsFromAdapter.removeAll(keepCapacity: false)
                 for responseDict in JSONObj{
                     let title = responseDict.objectForKey("title") as! NSString
@@ -104,7 +111,7 @@ class LocalDataManager:NSObject{
                     let price = responseDict.objectForKey("price") as! NSNumber
                     let image = responseDict.objectForKey("image") as! NSString
                     let productId = responseDict.objectForKey("productId") as! NSString
-                    println("Item :: title: \(title), store : \(store), price :\(price), image : \(image) productId : \(productId)")
+                    print("Item :: title: \(title), store : \(store), price :\(price), image : \(image) productId : \(productId)")
                     var item:Item = Item()
                     item.productId = productId
                     item.title = title
@@ -130,12 +137,12 @@ class LocalDataManager:NSObject{
                 self.localStore?.mapper.setDataType("Item", forClassName: NSStringFromClass(Item.classForCoder()))
                 self.localStore?.delete(self.itemsFromLocalStore[i], completionHandler: { (deletedObjectId:String!, deletedRevisionId:String!, err:NSError!) -> Void in
                     if err != nil{
-                        println("An error occured while deleting all the localstore documents")
+                        print("An error occured while deleting all the localstore documents")
                     }else{
                         if((i+1) == self.itemsFromLocalStore.count ){
                             self.addItemsFromAdapterToLocalStore(callback)
                         }
-                        println("Deleted a document")
+                        print("Deleted a document")
                     }
                 })
             }
@@ -147,12 +154,12 @@ class LocalDataManager:NSObject{
             self.localStore?.mapper.setDataType("Item", forClassName: NSStringFromClass(Item.classForCoder()))
             self.localStore?.save(self.itemsFromAdapter[i], completionHandler: { (obj:AnyObject!, err:NSError!) -> Void in
                 if err != nil{
-                    println("An error occured while saving documents to local store \(err.localizedDescription)")
+                    print("An error occured while saving documents to local store \(err.localizedDescription)")
                 }else{
                     if((i+1) == self.itemsFromAdapter.count ){
                         self.getAllLocalItems(callback)
                     }
-                    println("Saved a document")
+                    print("Saved a document")
                 }
             })
         }
@@ -162,22 +169,22 @@ class LocalDataManager:NSObject{
         self.localStore?.mapper.setDataType("Item", forClassName: NSStringFromClass(Item.classForCoder()))
         self.localStore?.save(item, completionHandler: { (obj:AnyObject!, err:NSError!) -> Void in
             if err != nil{
-                println("An error occured while saving document to local store \(err.localizedDescription)")
+                print("An error occured while saving document to local store \(err.localizedDescription)")
             }else{
-                println("Saved a document")
+                print("Saved a document")
                 callback()
             }
         })
     }
     
     func saveItemToLocalStoreList(item: Item, callback:(Bool, [Item]!)->()){
-       var resourceReq = WLResourceRequest(URL:  NSURL(string: "adapters/LocalStoreAdapter/localstore/addItem"), method: "PUT" )
+       let resourceReq = WLResourceRequest(URL:  NSURL(string: "adapters/LocalStoreAdapter/localstore/addItem"), method: "PUT" )
         resourceReq.sendWithBody(item.getString()) { (response:WLResponse!, err:NSError!) -> Void in
             if err != nil{
             //err
-                println("An error occured while adding data to the local store adapter")
+                print("An error occured while adding data to the local store adapter")
             } else{
-                    println("Added an item to the adapter")
+                    print("Added an item to the adapter")
                self.getAllItemsFromAdapter(callback)
                 callback(true,self.itemsFromAdapter)
             }

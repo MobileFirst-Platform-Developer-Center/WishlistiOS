@@ -1,5 +1,5 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>CDTStore Class Reference</title>
@@ -12,7 +12,7 @@
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
 				<h1><a id="libraryTitle" href="../index.html">CloudantToolkit </a></h1>
-				<a id="developerHome" href="../index.html">CloudantToolkit</a>
+				<a id="developerHome" href="../index.html">IBM</a>
 			</div>
 			
 			<div id="title" role="banner">
@@ -43,6 +43,8 @@
 	
 	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
 	
+	<option value="//api/name/requireMapperWithDatatype">&nbsp;&nbsp;&nbsp;&nbsp;requireMapperWithDatatype</option>
+	
 	
 	
 	
@@ -56,6 +58,8 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addOperation:">&nbsp;&nbsp;&nbsp;&nbsp;- addOperation:</option>
 	
 	<option value="//api/name/createIndexWithDataType:fields:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- createIndexWithDataType:fields:completionHandler:</option>
 	
@@ -101,6 +105,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requireMapperWithDatatype">requireMapperWithDatatype</a></span></li>
+	
 </ul></li>
 
 
@@ -116,6 +122,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addOperation:">addOperation:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createIndexWithDataType:fields:completionHandler:">createIndexWithDataType:fields:completionHandler:</a></span></li>
 	
@@ -200,6 +208,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/requireMapperWithDatatype">&nbsp;&nbsp;requireMapperWithDatatype</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/localStoreWithDatastore:">+&nbsp;localStoreWithDatastore:</a></code>
 	</span>
 	
@@ -255,6 +269,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fetchById:completionHandler:">&ndash;&nbsp;fetchById:completionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addOperation:">&ndash;&nbsp;addOperation:</a></code>
 	</span>
 	
 	
@@ -320,6 +340,42 @@
     
 
 	<div class="method-subsection method-declaration"><code>@property (readonly, atomic) NSString *name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CDTStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requireMapperWithDatatype" title="requireMapperWithDatatype"></a>
+	<h3 class="subsubtitle method-title">requireMapperWithDatatype</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether a <a href="../Protocols/CDTObjectMapper.html">CDTObjectMapper</a> must be set when @datatype is part of the JSON body.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (atomic) BOOL requireMapperWithDatatype</code></div>
 
     
 	
@@ -465,6 +521,52 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addOperation:" title="addOperation:"></a>
+	<h3 class="subsubtitle method-title">addOperation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add an operation to the database queue</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addOperation:(NSOperation *)<em>operation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>operation</em></dt>
+			<dd><p>Operation to add to the database operation queue</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CDTStore.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/createIndexWithDataType:fields:completionHandler:" title="createIndexWithDataType:fields:completionHandler:"></a>
@@ -898,12 +1000,9 @@
 				</div>
 				<div id="footer">
 					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 CloudantToolkit. All rights reserved. (Last updated: 2015-03-18)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
+                    <div class="footer-copyright">
+                        <p><span class="copyright">&copy; Copyright IBM Corp. 2015</span></p><br />
+                    </div>
 				</div>
 			</div>
 		</article>

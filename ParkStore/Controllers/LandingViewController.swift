@@ -15,6 +15,8 @@
 */
 
 import UIKit
+import IBMMobileFirstPlatformFoundation
+
 
 class LandingViewController: UIViewController {
 

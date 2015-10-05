@@ -85,6 +85,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CDTStore/setRequireMapperWithDatatype:</TokenIdentifier>
+			<Abstract type="html">Indicates whether a CDTObjectMapper must be set when @datatype is part of the JSON body.</Abstract>
+			<DeclaredIn>CDTStore.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) BOOL requireMapperWithDatatype</Declaration>
+			
+			
+			<Anchor>//api/name/requireMapperWithDatatype</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CDTStore/requireMapperWithDatatype</TokenIdentifier>
+			<Abstract type="html">Indicates whether a CDTObjectMapper must be set when @datatype is part of the JSON body.</Abstract>
+			<DeclaredIn>CDTStore.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) BOOL requireMapperWithDatatype</Declaration>
+			
+			
+			<Anchor>//api/name/requireMapperWithDatatype</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/CDTStore/requireMapperWithDatatype</TokenIdentifier>
+			<Abstract type="html">Indicates whether a CDTObjectMapper must be set when @datatype is part of the JSON body.</Abstract>
+			<DeclaredIn>CDTStore.h</DeclaredIn>
+			
+			<Declaration>@property (atomic) BOOL requireMapperWithDatatype</Declaration>
+			
+			
+			<Anchor>//api/name/requireMapperWithDatatype</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/CDTStore/localStoreWithDatastore:</TokenIdentifier>
 			<Abstract type="html">Creates a CDTStore that is local to the device.</Abstract>
 			<DeclaredIn>CDTStore.h</DeclaredIn>
@@ -284,6 +320,23 @@
 			</Parameters>
 			
 			<Anchor>//api/name/fetchById:completionHandler:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/CDTStore/addOperation:</TokenIdentifier>
+			<Abstract type="html">Add an operation to the database queue</Abstract>
+			<DeclaredIn>CDTStore.h</DeclaredIn>
+			
+			<Declaration>- (void)addOperation:(NSOperation *)operation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>operation</Name>
+					<Abstract type="html">Operation to add to the database operation queue</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addOperation:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

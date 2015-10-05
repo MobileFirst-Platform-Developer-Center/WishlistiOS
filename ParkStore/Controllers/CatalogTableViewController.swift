@@ -29,7 +29,7 @@ class CatalogTableViewController: UITableViewController {
                 self.items = items
                 self.tableView.reloadData()
             }else{
-                var error:UIAlertView = UIAlertView(title: "WishList", message: "There was an error while retrieving the catalog", delegate: nil, cancelButtonTitle: "OK")
+                let error:UIAlertView = UIAlertView(title: "WishList", message: "There was an error while retrieving the catalog", delegate: nil, cancelButtonTitle: "OK")
                 error.show()
             }
         }
@@ -68,13 +68,13 @@ class CatalogTableViewController: UITableViewController {
     
     func addButtonClicked(sender:UIButton){
         let item = self.items[sender.tag] as Item
-        println("tapped add with data \(item.title) \(item.store) \(item.price) \(item.productId) \(item.imgURL)")
+        print("tapped add with data \(item.title) \(item.store) \(item.price) \(item.productId) \(item.imgURL)")
         Reachability.isConnectedToCloudantDataProxy { (response) -> () in
             if response{
                 WishListDataManager.sharedInstance.getWishListItems { (success, items) -> () in
                     if success {
                         WishListDataManager.sharedInstance.saveItemToWishList(item, callback: { () -> () in
-                            println("Added data to wishlist from catalog")
+                            print("Added data to wishlist from catalog")
                             UIAlertView(title: "Wishlist", message: "Added Item to Wishlist", delegate: nil, cancelButtonTitle: "OK").show()
                         })
                     }
@@ -83,7 +83,7 @@ class CatalogTableViewController: UITableViewController {
                 LocalDataManager.sharedInstance.getAllItemsFromAdapter{ (success, items) ->()  in
                     if success{
                         //TODO
-                        LocalDataManager.sharedInstance.saveItemToLocalStoreList(item, callback: { (success, [Item]!) -> () in
+                        LocalDataManager.sharedInstance.saveItemToLocalStoreList(item, callback: { (success, _: [Item]!) -> () in
                             UIAlertView(title: "Wishlist", message: "Added Item to Wishlist", delegate: nil, cancelButtonTitle: "OK").show()
                         })
 

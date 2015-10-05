@@ -18,7 +18,6 @@
 #import "CDTReplicatorDelegate.h"
 
 @class CDTDatastore;
-@class CDTDocumentBody;
 @class TDReplicatorManager;
 @class CDTAbstractReplication;
 
@@ -184,11 +183,6 @@ typedef NS_ENUM(NSInteger, CDTReplicatorState) {
  * @see CDTReplicatorState
  */
 - (BOOL)startWithError:(NSError *__autoreleasing *)error;
-
-/**
-  Use startWithError. This will be deprecated.
- */
-- (void)start __deprecated;
 
 /**
  * Stop an in-progress replication or attempt to stop a replication that has not yet started.

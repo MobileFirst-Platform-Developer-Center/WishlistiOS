@@ -1,5 +1,5 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>IMFDataManager Class Reference</title>
@@ -12,7 +12,7 @@
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
 				<h1><a id="libraryTitle" href="../index.html">IMFData </a></h1>
-				<a id="developerHome" href="../index.html">IMFData</a>
+				<a id="developerHome" href="../index.html">IBM</a>
 			</div>
 			
 			<div id="title" role="banner">
@@ -61,9 +61,15 @@
 	
 	<option value="//api/name/localStore:error:">&nbsp;&nbsp;&nbsp;&nbsp;- localStore:error:</option>
 	
+	<option value="//api/name/localStore:withEncryptionKeyProvider:error:">&nbsp;&nbsp;&nbsp;&nbsp;- localStore:withEncryptionKeyProvider:error:</option>
+	
 	<option value="//api/name/pullReplicationForStore:">&nbsp;&nbsp;&nbsp;&nbsp;- pullReplicationForStore:</option>
 	
+	<option value="//api/name/pullReplicationForStore:withEncryptionKeyProvider:">&nbsp;&nbsp;&nbsp;&nbsp;- pullReplicationForStore:withEncryptionKeyProvider:</option>
+	
 	<option value="//api/name/pushReplicationForStore:">&nbsp;&nbsp;&nbsp;&nbsp;- pushReplicationForStore:</option>
+	
+	<option value="//api/name/pushReplicationForStore:withEncryptionKeyProvider:">&nbsp;&nbsp;&nbsp;&nbsp;- pushReplicationForStore:withEncryptionKeyProvider:</option>
 	
 	<option value="//api/name/remoteStore:completionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- remoteStore:completionHandler:</option>
 	
@@ -84,6 +90,8 @@
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_EncryptionKey Methods">EncryptionKey Methods</a></span></li>
 	
 </ul></li>
 
@@ -117,9 +125,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localStore:error:">localStore:error:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localStore:withEncryptionKeyProvider:error:">localStore:withEncryptionKeyProvider:error:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pullReplicationForStore:">pullReplicationForStore:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pullReplicationForStore:withEncryptionKeyProvider:">pullReplicationForStore:withEncryptionKeyProvider:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushReplicationForStore:">pushReplicationForStore:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushReplicationForStore:withEncryptionKeyProvider:">pushReplicationForStore:withEncryptionKeyProvider:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/remoteStore:completionHandler:">remoteStore:completionHandler:</a></span></li>
 	
@@ -175,7 +189,7 @@
 						
 						
 						
-						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
 
 						<ul class="task-list">
 							<li>
@@ -235,6 +249,32 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setCurrentUserPermissions:forStoreName:completionHander:">&ndash;&nbsp;setCurrentUserPermissions:forStoreName:completionHander:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="EncryptionKey Methods" name="task_EncryptionKey Methods"></a>
+						<h3 class="subsubtitle task-title">EncryptionKey Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localStore:withEncryptionKeyProvider:error:">&ndash;&nbsp;localStore:withEncryptionKeyProvider:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pullReplicationForStore:withEncryptionKeyProvider:">&ndash;&nbsp;pullReplicationForStore:withEncryptionKeyProvider:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pushReplicationForStore:withEncryptionKeyProvider:">&ndash;&nbsp;pushReplicationForStore:withEncryptionKeyProvider:</a></code>
 	</span>
 	
 	
@@ -524,6 +564,71 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/localStore:withEncryptionKeyProvider:error:" title="localStore:withEncryptionKeyProvider:error:"></a>
+	<h3 class="subsubtitle method-title">localStore:withEncryptionKeyProvider:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a local CDTStore for the given name. It also requires a key provider, the key returned by this
+provider will be used to cipher the CDTStore (attachments and extensions not included). The
+provider is always mandatory, in case you do not want to encrypt the data, you have to supply a
+CDTEncryptionKeyNilProvider instance or any other object that conforms to protocol
+CDTEncryptionKeyProvider and returns nil when the key is requested.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CDTStore *)localStore:(NSString *)<em>name</em> withEncryptionKeyProvider:(id&lt;CDTEncryptionKeyProvider&gt;)<em>provider</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the store.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>provider</em></dt>
+			<dd><p>It returns the key to cipher the CDTStore</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>Cause of failure or nil if successful</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The local CDTStore instance</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IMFDataManager+EncryptionKey.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/pullReplicationForStore:" title="pullReplicationForStore:"></a>
 	<h3 class="subsubtitle method-title">pullReplicationForStore:</h3>
 	
@@ -575,6 +680,62 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/pullReplicationForStore:withEncryptionKeyProvider:" title="pullReplicationForStore:withEncryptionKeyProvider:"></a>
+	<h3 class="subsubtitle method-title">pullReplicationForStore:withEncryptionKeyProvider:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Generates a CDTPullReplication object to be used to replicate with local CDTStore created with this manager</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CDTPullReplication *)pullReplicationForStore:(NSString *)<em>name</em> withEncryptionKeyProvider:(id&lt;CDTEncryptionKeyProvider&gt;)<em>provider</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>the name of the data store to replicate from remote to local</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>provider</em></dt>
+			<dd><p>It returns the key to cipher the local CDTStore</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the CDTPullReplication object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IMFDataManager+EncryptionKey.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/pushReplicationForStore:" title="pushReplicationForStore:"></a>
 	<h3 class="subsubtitle method-title">pushReplicationForStore:</h3>
 	
@@ -620,6 +781,62 @@
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
 		<code class="declared-in-ref">IMFDataManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pushReplicationForStore:withEncryptionKeyProvider:" title="pushReplicationForStore:withEncryptionKeyProvider:"></a>
+	<h3 class="subsubtitle method-title">pushReplicationForStore:withEncryptionKeyProvider:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Generates a CDTPushReplication object to be used to replicate with local Store created with this manager.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (CDTPushReplication *)pushReplicationForStore:(NSString *)<em>name</em> withEncryptionKeyProvider:(id&lt;CDTEncryptionKeyProvider&gt;)<em>provider</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>the name of the data store to replicate from local to remote</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>provider</em></dt>
+			<dd><p>It returns the key to cipher the local CDTStore</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the CDTPushReplication object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">IMFDataManager+EncryptionKey.h</code><br />
 	</div>				
 	
 	
@@ -746,12 +963,9 @@
 				</div>
 				<div id="footer">
 					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 IMFData. All rights reserved. (Last updated: 2015-03-18)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
+                    <div class="footer-copyright">
+                        <p><span class="copyright">&copy; Copyright IBM Corp. 2015</span></p><br />
+                    </div>
 				</div>
 			</div>
 		</article>

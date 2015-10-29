@@ -36,7 +36,7 @@
 		483CFA611AE77D9F00139BFF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483CFA601AE77D9F00139BFF /* MobileCoreServices.framework */; };
 		483CFA631AE77DA600139BFF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 483CFA621AE77DA600139BFF /* SystemConfiguration.framework */; };
 		48A47C971B87A3F000E1D9B1 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A47C961B87A3F000E1D9B1 /* Launch Screen.xib */; };
-		9582F88C64A6F604C23D842C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43CC1431B5A06D45096FFFA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9582F88C64A6F604C23D842C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43CC1431B5A06D45096FFFA /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -473,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -523,6 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -567,9 +569,10 @@
 			baseConfigurationReference = DE0DB122409666324FE69092 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chethan Settipalli (239WRL82JA)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "ParkStore/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -585,9 +588,10 @@
 			baseConfigurationReference = 83B3B0534E9E87885C246548 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chethan Settipalli (239WRL82JA)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "ParkStore/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";

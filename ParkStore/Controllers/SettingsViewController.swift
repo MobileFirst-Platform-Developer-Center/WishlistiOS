@@ -38,8 +38,8 @@ class SettingsViewController : UIViewController{
     }
     
     @IBAction func saveSettings(sender: AnyObject) {
-        let customServerUrl: String = "\(customServerHostPort.text)/\(mfpRuntimeName.text)"
-        let dataproxyUrl: String = "\(customServerHostPort.text)/datastore"
+        let customServerUrl: String! = "\(customServerHostPort.text!)/\(mfpRuntimeName.text!)"
+        let dataproxyUrl: String! = "\(customServerHostPort.text!)/datastore"
             WLClient.sharedInstance().setServerUrl(NSURL(string: customServerUrl))
             NSUserDefaults.standardUserDefaults().setObject(customServerUrl, forKey: "MFPCustomServerURL")
             NSUserDefaults.standardUserDefaults().setObject( dataproxyUrl, forKey: "DataProxyCustomServerURL")
